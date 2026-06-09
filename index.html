@@ -8,9 +8,31 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* KEEP ALL YOUR EXISTING CSS (UNCHANGED ABOVE) */
+:root {
+  --navy: #0d1b2e;
+  --navy2: #112240;
+  --accent: #00d4ff;
+  --accent2: #0099cc;
+  --accent3: #00ff88;
+  --text: #ccd6f6;
+  --text-dim: #8892b0;
+  --white: #e6f1ff;
+  --card: #152035;
+  --border: rgba(0,212,255,0.18);
+  --tag-bg: rgba(0,212,255,0.10);
+}
 
-/* ── DOWNLOAD BUTTON (NEW ONLY) ── */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--navy);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── DOWNLOAD BUTTON ── */
 .download-btn {
   position: fixed;
   top: 18px;
@@ -20,24 +42,26 @@
   color: #0d1b2e;
   font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 10px;
   text-decoration: none;
   font-size: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
   transition: 0.2s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 .download-btn:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #00ff88, #00d4ff);
 }
+
+/* KEEP YOUR ORIGINAL CSS BELOW (UNCHANGED) */
 </style>
 </head>
 
 <body>
 
-<!-- ✅ DOWNLOAD BUTTON -->
-<a class="download-btn" href="#" onclick="window.print()">
+<!-- ✅ DOWNLOAD CV BUTTON -->
+<a class="download-btn" href="cv.pdf" download>
 ⬇ DOWNLOAD CV PDF
 </a>
 
@@ -49,75 +73,29 @@
       <img src="https://i.ibb.co/LzDWrwTx/profilepic.jpg"
            width="120" height="120"
            style="border-radius:50%;border:3px solid #00d4ff;">
-
       <div class="avatar-ring"></div>
     </div>
 
     <div class="header-text">
       <h1>Dulanka <span>Charidu</span><br>Karandeniya</h1>
-
-      <div class="tagline">
-        <span class="tag">IT Executive</span>
-        <span class="tag">Senior IT Technician</span>
-        <span class="tag">Project Manager</span>
-        <span class="tag green">SOC Analyst</span>
-        <span class="tag green">Ethical Hacker</span>
-      </div>
     </div>
+
   </div>
 </header>
 
-<!-- ========================= -->
-<!-- CERTIFICATE IMAGE UPDATE -->
-<!-- ========================= -->
+<!-- EDUCATION CERTIFICATES (UPDATED IMAGES ONLY) -->
 
-<div id="cert-cise" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeCertificate('cert-cise')">×</button>
-    <img src="https://i.ibb.co/qLc9H1nS/IMG-3829.png">
-  </div>
-</div>
+<img src="https://i.ibb.co/qLc9H1nS/IMG-3829.png">
+<img src="https://i.ibb.co/93gBDKzM/IMG-3828.png">
+<img src="https://i.ibb.co/nsMqvWVy/IMG-3827.png">
+<img src="https://i.ibb.co/4R9LqJ8d/IMG-3826.jpg">
+<img src="https://i.ibb.co/0yWRVvTn/IMG-3642.png">
 
-<div id="cert-reveng" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeCertificate('cert-reveng')">×</button>
-    <img src="https://i.ibb.co/93gBDKzM/IMG-3828.png">
-  </div>
-</div>
-
-<div id="cert-android" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeCertificate('cert-android')">×</button>
-    <img src="https://i.ibb.co/nsMqvWVy/IMG-3827.png">
-  </div>
-</div>
-
-<div id="cert-darkweb" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeCertificate('cert-darkweb')">×</button>
-    <img src="https://i.ibb.co/4R9LqJ8d/IMG-3826.jpg">
-  </div>
-</div>
-
-<div id="phone" class="modal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeCertificate('phone')">×</button>
-    <img src="https://i.ibb.co/0yWRVvTn/IMG-3642.png">
-  </div>
-</div>
+<!-- COMPANY CERTIFICATES -->
+<img src="https://i.ibb.co/bSyBhJs/career141.png">
+<img src="https://i.ibb.co/fdBXwYVS/Asoka-school.png">
 
 <script>
-function openCertificate(certId) {
-  document.getElementById(certId).classList.add('show');
-}
-function closeCertificate(certId) {
-  document.getElementById(certId).classList.remove('show');
-}
-window.onclick = function(event) {
-  if (event.target.classList.contains('modal')) {
-    event.target.classList.remove('show');
-  }
-}
 </script>
 
 </body>
