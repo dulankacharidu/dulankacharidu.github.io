@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulanka Charidu Karandeniya - International CV</title>
+    <style>
+        :root {
+            --primary-blue: #0A2540;
+            --accent-blue: #0070F3;
+            --light-blue: #F0F7FF;
+            --border-blue: #CCE3FF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: var(--text-dark);
+            background-color: #F8FAFC;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Premium Blue Header Banner */
+        .cv-header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent-blue);
+        }
+
+        .header-text h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.6rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .header-text h2 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: #93C5FD;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-img-container {
+            width: 135px;
+            height: 165px;
+            border: 3px solid white;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #E2E8F0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Structural Grid Layout */
+        .cv-body {
+            display: grid;
+            grid-template-columns: 32% 68%;
+        }
+
+        /* Left Side Panel */
+        .sidebar {
+            background-color: var(--light-blue);
+            padding: 35px 25px;
+            border-right: 1px solid var(--border-blue);
+        }
+
+        /* Right Side Content Area */
+        .main-content {
+            padding: 35px 40px;
+        }
+
+        /* Enhanced High-Contrast Section Titles */
+        .section-title {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2.5px solid var(--accent-blue);
+            padding-bottom: 4px;
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-content .section-title {
+            font-size: 1.25rem;
+            margin-top: 28px;
+        }
+
+        /* Sidebar Metadata Fields */
+        .contact-item {
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--primary-blue);
+            margin-bottom: 3px;
+        }
+
+        .contact-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Technical Competency Matrix Pill Blocks */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .skill-group {
+            font-size: 0.85rem;
+        }
+
+        .skill-group strong {
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #E1EFFE;
+            color: var(--primary-blue);
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin: 2px;
+            font-weight: 600;
+            border: 1px solid var(--border-blue);
+        }
+
+        /* Professional Experience Timeline Block Styling */
+        .job-block, .project-block, .edu-block {
+            margin-bottom: 24px;
+        }
+
+        .block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .block-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            margin-top: 10px;
+        }
+
+        .block-company {
+            font-style: italic;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin: 2px 0 6px 0;
+        }
+
+        .block-date {
+            font-size: 0.82rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            white-space: nowrap;
+            background: #E1EFFE;
+            padding: 3px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border-blue);
+        }
+
+        ul.responsibility-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        ul.responsibility-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Styled Internal Project Callouts */
+        .project-meta {
+            font-size: 0.9rem;
+            margin-top: 8px;
+            background: var(--light-blue);
+            padding: 10px 14px;
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 0 6px 6px 0;
+        }
+
+        p.summary-text {
+            font-size: 0.98rem;
+            margin-top: 0;
+            text-align: justify;
+        }
+
+        /* Inline Link Clean Formatting */
+        .inline-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .inline-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Explicit New Section: Languages & Tools Matrix */
+        .lang-tools-grid {
+            display: grid;
+            grid-template-columns: 100%;
+            gap: 10px;
+            background: var(--light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-blue);
+        }
+
+        .lang-tools-item {
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .lang-tools-item strong {
+            min-width: 180px;
+            color: var(--primary-blue);
+            display: inline-block;
+        }
+
+        /* Explicit New Section: Referral Links Panel */
+        .referral-links-panel {
+            display: grid;
+            grid-template-columns: 100%;
+            gap: 8px;
+        }
+
+        .referral-row {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--border-blue);
+        }
+
+        .referral-row:last-child {
+            border-bottom: none;
+        }
+
+        .referral-label {
+            font-weight: 700;
+            min-width: 180px;
+            color: var(--primary-blue);
+            text-transform: capitalize;
+        }
+
+        /* Bottom Declaration Workspace Layout */
+        .declaration-section {
+            margin-top: 25px;
+            border-top: 2px solid var(--border-blue);
+            padding-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .signature-space {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .signature-line {
+            width: 200px;
+            border-bottom: 1px dashed var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Breakpoints for Global Access */
+        @media (max-width: 768px) {
+            .cv-body {
+                grid-template-columns: 100%;
+            }
+            .cv-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border-blue);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    
+    <!-- CV Header Workspace Area -->
+    <header class="cv-header">
+        <div class="header-text">
+            <h1>DULANKA CHARIDU KARANDENIYA</h1>
+            <h2>IT Executive | Senior IT Technician | Project Manager | SOC Analyst</h2>
+        </div>
+        <div class="profile-img-container">
+            <img src="propic.jpg" alt="Dulanka Charidu Karandeniya">
+        </div>
+    </header>
+
+    <div class="cv-body">
+        
+        <!-- Left Structural Column Panel -->
+        <aside class="sidebar">
+            
+            <h3 class="section-title">Contact Details</h3>
+            <div class="contact-item">
+                <strong>Address:</strong>
+                123/2e Gangarama Road, Boralesgamuwa, Sri Lanka
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong>
+                +94776009919
+            </div>
+            <div class="contact-item">
+                <strong>Email:</strong>
+                <a href="mailto:dulankacharidu@gmail.com">dulankacharidu@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Date of Birth:</strong>
+                July 10, 1993
+            </div>
+            <div class="contact-item">
+                <strong>Digital CV:</strong>
+                <a href="https://dulanka.is-a.dev" target="_blank">dulanka.is-a.dev</a>
+            </div>
+            <div class="contact-item">
+                <strong>GitHub URL:</strong>
+                <a href="https://github.com/dulankacharidu" target="_blank">github.com/dulankacharidu</a>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 30px;">Core Competencies</h3>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <strong>Cybersecurity & Threat Management</strong>
+                    <span class="skill-tag">Ethical Hacking</span>
+                    <span class="skill-tag">Penetration Testing</span>
+                    <span class="skill-tag">SOC Operations</span>
+                    <span class="skill-tag">Vulnerability Assessments</span>
+                    <span class="skill-tag">Network Hardening</span>
+                </div>
+                <div class="skill-group">
+                    <strong>Infrastructure Engineering</strong>
+                    <span class="skill-tag">Fiber Optic Architecture</span>
+                    <span class="skill-tag">Structural Cable Mgmt</span>
+                    <span class="skill-tag">Coaxial / Cat6e / Cat5e</span>
+                    <span class="skill-tag">Network Topology Design</span>
+                </div>
+                <div class="skill-group">
+                    <strong>Surveillance & Access Control</strong>
+                    <span class="skill-tag">Enterprise CCTV</span>
+                    <span class="skill-tag">Hikvision Registered Dealer</span>
+                    <span class="skill-tag">Burglar Alarm Automation</span>
+                    <span class="skill-tag">Biometrics & Gate Barriers</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Right Main Workspace Content Area -->
+        <main class="main-content">
+            
+            <section>
+                <h3 class="section-title" style="margin-top: 0;">Professional Summary</h3>
+                <p class="summary-text">
+                    Results-driven IT Project Manager and Infrastructure Specialist with over 10 years of hands-on experience directing enterprise network architecture, physical electronic security frameworks, and SOC environments. Recognized for successfully delivering complex infrastructure pipelines for government, manufacturing, and hospitality sectors. Expert in advanced penetration testing, automated smart-home systems integration, and AI-driven workflow optimization.
+                </p>
+            </section>
+
+            <section>
+                <h3 class="section-title">Professional Experience</h3>
+                
+                <!-- Entry 1 -->
+                <div class="job-block">
+                    <div class="block-header">
+                        <div>
+                            <h4 class="block-title">Managing Director & Senior IT Technician</h4>
+                            <div class="block-company">Virtual Creation (Sri Lanka)</div>
+                        </div>
+                        <span class="block-date">March 2015 – Present</span>
+                    </div>
+                    <ul class="responsibility-list">
+                        <li>Direct technical operations, project scoping, and engineering deployments for corporate electronic security and network distribution infrastructure.</li>
+                        <li>Design and deploy scalable enterprise CCTV architectures, network-attached storage, and automated biometric time attendance frameworks.</li>
+                        <li>Architect structured internal network backbones utilizing Fiber Optic, Cat6e, and Coaxial technologies.</li>
+                        <li>Incorporate smart-home IoT solutions alongside executing end-to-end digital optimization strategies (SEO, PPC, SMM).</li>
+                    </ul>
+                    <div class="project-meta">
+                        <strong>Key Corporate Projects:</strong> Miloda Academy of Financial Studies, Ambewela Milk Factory, Mr. Harpoo Hotels, Kalubowila Teaching Hospital, Career141 Consultant Pvt Ltd.
+                    </div>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="job-block">
+                    <div class="block-header">
+                        <div>
+                            </div> 
+                            <h4 class="block-title">Managing Director & Senior Technician</h4>
+                            <div class="block-company">DC Construction and Electrical</div>
+                        </div>
+                        <span class="block-date">March 2015 – Present</span>
+                    </div>
+                    <ul class="responsibility-list">
+                        <li>Engineer comprehensive structural electrical schematics, blueprint designs, and full-scale commercial/residential wiring matrices.</li>
+                        <li>Supervise technical execution teams handling complex physical structural renovations and industrial fiber-optic network mapping.</li>
+                    </ul>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="job-block">
+                    <div class="block-header">
+                        <div>
+                            <h4 class="block-title" style="margin-top: auto;">IT & CCTV Technician</h4>
+                            <div class="block-company">Systec Solution Pvt Ltd (Sri Lanka)</div>
+                        </div>
+                        <span class="block-date">February 2013 – March 2015</span>
+                    </div>
+                    <ul class="responsibility-list">
+                        <li>Provisioned tactical field installations and ongoing technical maintenance for enterprise-level closed-circuit surveillance networks.</li>
+                        <li>Managed hardware diagnostics, component overhauls, automated gate barrier systems, and fleet GPS tracking solutions.</li>
+                    </ul>
+                    <div class="project-meta">
+                        <strong>Key Institutional Projects:</strong> Sri Lanka Telecom, Dialog Axiata Outdoor 4G Connection, N and Y Investment Company.
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <h3 class="section-title">Cybersecurity Research & Open Source Contributions</h3>
+                <p class="summary-text" style="font-style: italic; font-size: 0.9rem; color: var(--text-muted);">
+                    All engineering and research activities follow standard vulnerability disclosure frameworks to improve defensive security baselines with zero-day remediation and full documentation support.
+                </p>
+                
+                <div class="project-block">
+                    <div class="block-header">
+                        <h4 class="block-title">Jatika Rupavahini Corporation (National TV Broadcaster)</h4>
+                        <span class="block-date">Flagship Case</span>
+                    </div>
+                    <p class="summary-text" style="margin-top: 5px;">Identified and systematically remediated a high-severity web platform vulnerability via a coordinated security patch disclosure with network administrators.</p>
+                </div>
+
+                <div class="project-block">
+                    <div class="block-header">
+                        <h4 class="block-title">Zone-H Vulnerability Archive (Notifier: blackwood)</h4>
+                        <span class="block-date">200+ Documented Cases</span>
+                    </div>
+                    <p class="summary-text" style="margin-top: 5px;">Maintained an active threat intelligence footprint with over 200 validated vulnerability cases logged, covering advanced SQL injections, cross-site scripting (XSS), and severe server infrastructure misconfigurations.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="section-title">Education & Professional Certifications</h3>
+                <div class="edu-block">
+                    <div style="margin-bottom: 8px;"><strong>Software Engineering Higher Diploma</strong> – Java Institute (2012 – 2014)</div>
+                    <div style="margin-bottom: 8px;"><strong>Java Standalone Application Developer</strong> – Java Institute for Advanced Technology</div>
+                    <div style="margin-bottom: 8px;"><strong>Certified Information Security Expert (CISE)</strong> – Innobuzz Learning Solutions</div>
+                    <div>
+                        <strong>Certified Ethical Hacker (CEH)</strong> – EC-Council
+                        <div style="font-size: 0.88rem; color: var(--text-muted); margin-left: 15px; margin-top: 3px;">• Core Specializations: Advanced Reverse Engineering, Mobile & Android Bug Bounty Frameworks, Dark Web Architecture & Protocol Anonymity.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 1: Languages & Tools Panel -->
+            <section>
+                <h3 class="section-title">Languages & Tools</h3>
+                <div class="lang-tools-grid">
+                    <div class="lang-tools-item">
+                        <strong>Programming & Web:</strong>
+                        <span>Java, JavaScript, HTML/CSS</span>
+                    </div>
+                    <div class="lang-tools-item">
+                        <strong>Hardware & Embedded:</strong>
+                        <span>ESP32 / Arduino</span>
+                    </div>
+                    <div class="lang-tools-item">
+                        <strong>Operating Systems:</strong>
+                        <span>Linux / Windows Server</span>
+                    </div>
+                    <div class="lang-tools-item">
+                        <strong>Infrastructure Matrix:</strong>
+                        <span>Networking Tools & Security Frameworks</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Professional Verification & Referral Links Panel -->
+            <section>
+                <h3 class="section-title">Referral Links</h3>
+                <div class="referral-links-panel">
+                    <div class="referral-row">
+                        <span class="referral-label">GitHub Repository:</span>
+                        <a href="https://github.com/dulankacharidu/" class="inline-link" target="_blank">https://github.com/dulankacharidu/</a>
+                    </div>
+                    <div class="referral-row">
+                        <span class="referral-label">Verified Certificates:</span>
+                        <a href="https://ibb.co/album/mb5nMq" class="inline-link" target="_blank">https://ibb.co/album/mb5nMq</a>
+                    </div>
+                    <div class="referral-row">
+                        <span class="referral-label">Bug Bounty Archives:</span>
+                        <a href="https://www.zone-h.org/archive/notifier=blackwood" class="inline-link" target="_blank">https://www.zone-h.org/archive/notifier=blackwood</a>
+                    </div>
+                    <div class="referral-row">
+                        <span class="referral-label">Corporate Portfolio:</span>
+                        <a href="https://www.fb.com/vcreation.lk" class="inline-link" target="_blank">www.fb.com/vcreation.lk</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Declaration Baseline Workspace Area -->
+            <section class="declaration-section">
+                <h3 class="section-title">Declaration</h3>
+                <p>I hereby attest that the above information is true and correct to the best of my knowledge.</p>
+                
+                <div class="signature-space">
+                    <div class="signature-line"></div>
+                    <div style="font-weight: 700; color: var(--primary-blue); font-size: 1.05rem;">Dulanka Charindu</div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 2px;">Date: 14/05/2026</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
