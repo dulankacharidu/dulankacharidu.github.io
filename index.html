@@ -602,7 +602,7 @@
 
 <!-- HEADER -->
 <header class="header">
-    <a href="Dulanka_CV.pdf" class="download-cv-btn" download="Dulanka_Charidu_Karandeniya_CV_2026.pdf" target="_blank">
+    <a href="Dulanka_CV.pdf" class="download-cv-btn" download="Dulanka_Charidu_Karandeniya_CV_2026.pdf" target="_blank" id="secureBtn">
         <svg viewBox="0 0 25 25" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M16 13v5"></path><path d="M8 18h8"></path></svg>
         DOWNLOAD CV (PDF)
     </a>
@@ -1094,6 +1094,22 @@ window.onclick = function(event) {
     }
 }
 </script>
+<script>
+    const protectedButton = document.getElementById("secureBtn");
 
+protectedButton.addEventListener("click", function() {
+  // Trigger a browser pop-up text entry box
+  const userInput = prompt("Please enter the password to proceed:");
+
+  if (userInput === "2026") {
+    alert("Correct! Opening your file.");
+    // Action to take: e.g., Redirect to a secret page
+    window.location.href = "/Dulanka_CV.pdf";
+  } else if (userInput !== null) {
+    // If the user didn't hit 'Cancel' but entered the wrong text
+    alert("Access Denied: Incorrect password.");
+  }
+});
+</script>
 </body>
 </html>
