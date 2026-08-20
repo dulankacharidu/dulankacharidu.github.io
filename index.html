@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <!-- Dulanka Charidu Karandeniya — Professional Digital CV 2026 -->
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dulanka Charidu Karandeniya — Dulanka is a Dev | Software Developer & IT Specialist</title>
+
+    <title>
+        Dulanka Charidu Karandeniya — Dulanka is a Dev | Software Developer & IT Specialist
+    </title>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -18,11 +23,15 @@
             --text-dim: #8892b0;
             --white: #e6f1ff;
             --card: #152035;
-            --border: rgba(0,212,255,0.18);
-            --tag-bg: rgba(0,212,255,0.10);
+            --border: rgba(0, 212, 255, 0.18);
+            --tag-bg: rgba(0, 212, 255, 0.10);
         }
 
-        * { margin-top:3px; padding:0; box-sizing:border-box; }
+        * {
+            margin-top: 3px;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -32,1119 +41,3645 @@
             line-height: 1.6;
         }
 
-        /* HEADER */
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
         .header {
-            background: linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1f3a 100%);
+            background: linear-gradient(
+                135deg,
+                #0a1628 0%,
+                #112240 50%,
+                #0d1f3a 100%
+            );
+
             border-bottom: 1px solid var(--border);
             padding: 48px 60px 40px;
             position: relative;
             overflow: hidden;
         }
+
         .header::before {
-            content:'';
-            position:absolute;
-            top:-60px; right:-60px;
-            width:320px; height:320px;
-            background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
-            pointer-events:none;
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 320px;
+            height: 320px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 212, 255, 0.12) 0%,
+                    transparent 70%
+                );
+
+            pointer-events: none;
         }
+
         .header::after {
-            content:'';
-            position:absolute;
-            bottom:-40px; left:30%;
-            width:200px; height:200px;
-            background: radial-gradient(circle, rgba(0,255,136,0.06) 0%, transparent 70%);
-            pointer-events:none;
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 30%;
+            width: 200px;
+            height: 200px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 255, 136, 0.06) 0%,
+                    transparent 70%
+                );
+
+            pointer-events: none;
         }
+
         .header-inner {
-            display:flex;
-            align-items:center;
-            gap:48px;
-            position:relative;
-            z-index:1;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            position: relative;
+            z-index: 1;
         }
+
         .avatar-wrap {
-            position:relative;
-            flex-shrink:0;
+            position: relative;
+            flex-shrink: 0;
         }
+
         .avatar-wrap img {
-            width:180px; height:180px;
-            border-radius:50%;
-            object-fit:cover;
-            border:3px solid var(--accent);
-            display:block;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            display: block;
         }
+
         .avatar-ring {
-            position:absolute;
-            inset:-10px;
-            border-radius:50%;
-            border:2px dashed rgba(0,212,255,0.35);
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            border: 2px dashed rgba(0, 212, 255, 0.35);
             animation: spin 18s linear infinite;
         }
-        @keyframes spin { to { transform:rotate(360deg); } }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
         .header-text h1 {
-            font-size:35px;
-            font-weight:800;
-            color:var(--white);
-            letter-spacing:1px;
-            line-height:1.1;
-            text-transform:uppercase;
+            font-size: 35px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+            line-height: 1.1;
+            text-transform: uppercase;
         }
-        .header-text h1 span { color:var(--accent); }
-        .tagline {
-            margin-top:10px;
-            display:flex;
-            flex-wrap:wrap;
-            gap:8px;
-        }
-        .tag {
-            font-size:0.72rem;
-            font-weight:600;
-            letter-spacing:1.2px;
-            text-transform:uppercase;
-            padding:4px 12px;
-            border-radius:20px;
-            border:1px solid var(--border);
-            background:var(--tag-bg);
-            color:var(--accent);
-            font-family:'JetBrains Mono', monospace;
-        }
-        .tag.green { color:var(--accent3); border-color:rgba(0,255,136,0.25); background:rgba(0,255,136,0.08); }
-        .contact-row {
-            margin-top:18px;
-            display:flex;
-            flex-wrap:wrap;
-            gap:18px;
-        }
-        .contact-row a, .contact-row span {
-            font-size:14px;
-            color:#edeff5;
-            text-decoration:none;
-            display:flex;
-            align-items:center;
-            gap:6px;
-            transition:color .2s;
-        }
-        .contact-row a:hover { color:var(--accent); }
-        .contact-row svg { width:14px; height:14px; }
 
-        /* Download CV Button */
+        .header-text h1 span {
+            color: var(--accent);
+        }
+
+        .tagline {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--tag-bg);
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tag.green {
+            color: var(--accent3);
+            border-color: rgba(0, 255, 136, 0.25);
+            background: rgba(0, 255, 136, 0.08);
+        }
+
+        .contact-row {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .contact-row a,
+        .contact-row span {
+            font-size: 14px;
+            color: #edeff5;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .contact-row a:hover {
+            color: var(--accent);
+        }
+
+        .contact-row svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* =========================================================
+           DOWNLOAD CV BUTTON
+        ========================================================= */
+
         .download-cv-btn {
             position: absolute;
             top: 4%;
             right: 10%;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00d4ff,
+                    #0099cc
+                );
+
             color: #0d1b2e;
             font-weight: 500;
             font-size: 0.72rem;
+
             padding: 5px 20px;
+
             border-radius: 50px;
             text-decoration: none;
-            display: absolute ;
-            align-items:center;
+
+            /* FIXED:
+               display: absolute was invalid CSS */
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+
+            box-shadow:
+                0 4px 15px rgba(0, 212, 255, 0.3);
+
             transition: all 0.3s ease;
+
             z-index: 5;
+
             border: none;
             cursor: pointer;
+
             font-family: 'Inter', sans-serif;
         }
+
         .download-cv-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
-            background: linear-gradient(135deg, #00ffcc, #00b3ff);
+
+            box-shadow:
+                0 8px 25px rgba(0, 212, 255, 0.4);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00ffcc,
+                    #00b3ff
+                );
         }
+
+        .download-cv-btn:disabled {
+            transform: none;
+            opacity: 0.6;
+            cursor: wait;
+        }
+
         .download-cv-btn svg {
-            width: 8px;
-            height: 8px;
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
         }
 
-        /* NAV DOTS */
+        /* =========================================================
+           NAV DOTS
+        ========================================================= */
+
         .nav-dots {
-    font-size:1rem;
+            font-size: 1rem;
 
-            display:flex;
-            justify-content:center;
-            gap:6px;
-            padding:14px;
-            background:rgba(0,0,0,0.25);
-            border-bottom:1px solid var(--border);
-            position:sticky;
-            top:0;
-            z-index:100;
-            backdrop-filter:blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+
+            padding: 14px;
+
+            background: rgba(0, 0, 0, 0.25);
+
+            border-bottom: 1px solid var(--border);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+
+            backdrop-filter: blur(10px);
         }
+
         .nav-dots a {
-            font-size:0.72rem;
-            font-weight:600;
-            letter-spacing:.8px;
-            text-transform:uppercase;
-            color:var(--text-dim);
-            text-decoration:none;
-            padding:5px 14px;
-            border-radius:20px;
-            border:1px solid transparent;
-            transition:all .2s;
-            font-family:'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+
+            color: var(--text-dim);
+
+            text-decoration: none;
+
+            padding: 5px 14px;
+
+            border-radius: 20px;
+
+            border: 1px solid transparent;
+
+            transition: all 0.2s;
+
+            font-family: 'JetBrains Mono', monospace;
         }
+
         .nav-dots a:hover {
-            color:var(--accent);
-            border-color:var(--border);
-            background:var(--tag-bg);
+            color: var(--accent);
+            border-color: var(--border);
+            background: var(--tag-bg);
         }
 
-        /* LAYOUT */
-        .main { max-width:960px; margin:0 auto; padding:40px 32px 60px; }
+        /* =========================================================
+           LAYOUT
+        ========================================================= */
 
-        /* SECTION */
-        .section { margin-bottom:48px; }
+        .main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 32px 60px;
+        }
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        .section {
+            margin-bottom: 48px;
+        }
+
         .section-title {
-            font-size:0.9rem;
-            font-weight:800;
-            letter-spacing:2.5px;
-            text-transform:uppercase;
-            color:var(--accent);
-            font-family:'JetBrains Mono', monospace;
-            display:flex;
-            align-items:center;
-            gap:12px;
-            margin-bottom:22px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+
+            color: var(--accent);
+
+            font-family: 'JetBrains Mono', monospace;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 22px;
         }
+
         .section-title::after {
-            content:'';
-            flex:1;
-            height:1px;
-            background:linear-gradient(90deg, var(--border), transparent);
+            content: '';
+            flex: 1;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--border),
+                    transparent
+                );
         }
 
-        /* OBJECTIVE */
+        /* =========================================================
+           OBJECTIVE
+        ========================================================= */
+
         .objective-card {
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:12px;
-            padding:24px 28px;
-            position:relative;
-            overflow:hidden;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 24px 28px;
+
+            position: relative;
+
+            overflow: hidden;
         }
+
         .objective-card::before {
-            content:'';
-            position:absolute;
-            left:0; top:0; bottom:0;
-            width:3px;
-            background:linear-gradient(180deg, var(--accent), var(--accent3));
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--accent),
+                    var(--accent3)
+                );
         }
+
         .objective-card p {
-            color:var(--text);
-            font-size:0.95rem;
-            line-height:1.8;
+            color: var(--text);
+
+            font-size: 0.95rem;
+
+            line-height: 1.8;
         }
 
-        /* EXPERIENCE */
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
         .exp-item {
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:12px;
-            padding:22px 26px;
-            margin-bottom:16px;
-            transition:border-color .25s, transform .2s;
-            position:relative;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 22px 26px;
+
+            margin-bottom: 16px;
+
+            transition:
+                border-color 0.25s,
+                transform 0.2s;
+
+            position: relative;
         }
+
         .exp-item:hover {
-            border-color:rgba(0,212,255,0.4);
-            transform:translateX(4px);
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateX(4px);
         }
-        .exp-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; }
-        .exp-title { font-size:1rem; font-weight:700; color:var(--white); }
-        .exp-company { font-size:0.85rem; color:var(--accent); font-weight:500; margin-top:2px; }
+
+        .exp-header {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-start;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .exp-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .exp-company {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
         .exp-date {
-            font-size:0.72rem;
-            font-family:'JetBrains Mono', monospace;
-            color:var(--text-dim);
-            background:rgba(0,212,255,0.08);
-            padding:3px 10px;
-            border-radius:20px;
-            white-space:nowrap;
+            font-size: 0.72rem;
+
+            font-family: 'JetBrains Mono', monospace;
+
+            color: var(--text-dim);
+
+            background: rgba(0, 212, 255, 0.08);
+
+            padding: 3px 10px;
+
+            border-radius: 20px;
+
+            white-space: nowrap;
         }
-        .exp-desc { margin-top:12px; font-size:0.87rem; color:var(--text-dim); line-height:1.7; }
-        .exp-bullets { margin-top:10px; padding-left:0; list-style:none; }
+
+        .exp-desc {
+            margin-top: 12px;
+
+            font-size: 0.87rem;
+
+            color: var(--text-dim);
+
+            line-height: 1.7;
+        }
+
+        .exp-bullets {
+            margin-top: 10px;
+
+            padding-left: 0;
+
+            list-style: none;
+        }
+
         .exp-bullets li {
-            font-size:0.85rem;
-            color:var(--text-dim);
-            padding:3px 0 3px 18px;
-            position:relative;
+            font-size: 0.85rem;
+
+            color: var(--text-dim);
+
+            padding: 3px 0 3px 18px;
+
+            position: relative;
         }
+
         .exp-bullets li::before {
-            content:'▸';
-            position:absolute;
-            left:0;
-            color:var(--accent);
-            font-size:1rem;
+            content: '▸';
+
+            position: absolute;
+
+            left: 0;
+
+            color: var(--accent);
+
+            font-size: 1rem;
         }
-        .exp-projects { margin-top:10px; }
+
+        .exp-projects {
+            margin-top: 10px;
+        }
+
         .exp-projects span {
-            font-size:0.5rem;
-            font-weight:400;
-            color:var(--accent3);
-            letter-spacing:.5px;
-            text-transform:uppercase;
-            font-family:'JetBrains Mono', monospace;
-            display:block;
-            margin-bottom:6px;
+            font-size: 0.5rem;
+
+            font-weight: 400;
+
+            color: var(--accent3);
+
+            letter-spacing: 0.5px;
+
+            text-transform: uppercase;
+
+            font-family: 'JetBrains Mono', monospace;
+
+            display: block;
+
+            margin-bottom: 6px;
         }
-        .proj-chips { display:flex; flex-wrap:wrap; gap:6px; }
+
+        .proj-chips {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+        }
+
         .proj-chip {
-            font-size:1rem;
-            color:var(--text-dim);
-            background:rgba(255,255,255,0.04);
-            border:1px solid rgba(255,255,255,0.08);
-            border-radius:6px;
-            padding:2px 10px;
+            font-size: 1rem;
+
+            color: var(--text-dim);
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 6px;
+
+            padding: 2px 10px;
         }
 
-        /* EDUCATION */
+        /* =========================================================
+           EDUCATION
+        ========================================================= */
+
         .edu-item {
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:12px;
-            padding:20px 24px;
-            margin-bottom:14px;
-            display:flex;
-            justify-content:space-between;
-            align-items:flex-start;
-            flex-wrap:wrap;
-            gap:10px;
-            transition:border-color .25s;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 20px 24px;
+
+            margin-bottom: 14px;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-start;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            transition: border-color 0.25s;
         }
-        .edu-item:hover { border-color:rgba(0,212,255,0.4); }
-        .edu-left {}
-        .edu-degree { font-size:0.9rem; font-weight:600; color:var(--white); }
-        .edu-institute { font-size:0.82rem; color:var(--accent); margin-top:3px; }
+
+        .edu-item:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .edu-left {
+        }
+
+        .edu-degree {
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            color: var(--white);
+        }
+
+        .edu-institute {
+            font-size: 0.82rem;
+
+            color: var(--accent);
+
+            margin-top: 3px;
+        }
+
         .edu-cert-link {
-            display:inline-flex;
-            align-items:center;
-            gap:5px;
-            margin-top:8px;
-            font-size:0.9rem;
-            color:var(--accent3);
-            text-decoration:none;
-            font-family:'JetBrains Mono', monospace;
-            border:1px solid rgba(0,255,136,0.25);
-            background:rgba(0,255,136,0.06);
-            padding:3px 10px;
-            border-radius:6px;
-            transition:all .2s;
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            margin-top: 8px;
+
+            font-size: 0.9rem;
+
+            color: var(--accent3);
+
+            text-decoration: none;
+
+            font-family: 'JetBrains Mono', monospace;
+
+            border: 1px solid rgba(0, 255, 136, 0.25);
+
+            background: rgba(0, 255, 136, 0.06);
+
+            padding: 3px 10px;
+
+            border-radius: 6px;
+
+            transition: all 0.2s;
         }
-        .edu-cert-link:hover { background:rgba(0,255,136,0.14); color:#fff; }
-        .edu-cert-link svg { width:12px; height:12px; }
+
+        .edu-cert-link:hover {
+            background: rgba(0, 255, 136, 0.14);
+            color: #fff;
+        }
+
+        .edu-cert-link svg {
+            width: 12px;
+            height: 12px;
+        }
+
         .edu-year {
-            font-size:0.9rem;
-            font-family:'JetBrains Mono', monospace;
-            color:var(--text-dim);
-            background:rgba(0,212,255,0.08);
-            padding:3px 10px;
-            border-radius:20px;
-            white-space:nowrap;
-            align-self:flex-start;
+            font-size: 0.9rem;
+
+            font-family: 'JetBrains Mono', monospace;
+
+            color: var(--text-dim);
+
+            background: rgba(0, 212, 255, 0.08);
+
+            padding: 3px 10px;
+
+            border-radius: 20px;
+
+            white-space: nowrap;
+
+            align-self: flex-start;
         }
 
-        /* GITHUB */
+        /* =========================================================
+           GITHUB
+        ========================================================= */
+
         .github-header {
-            display:flex;
-            align-items:center;
-            gap:14px;
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:12px;
-            padding:18px 24px;
-            margin-bottom:18px;
-        }
-        .github-header svg { color:var(--accent); flex-shrink:0; }
-        .github-header a {
-            font-size:0.9rem;
-            font-weight:600;
-            color:var(--accent);
-            text-decoration:none;
-            font-family:'JetBrains Mono', monospace;
-        }
-        .github-header a:hover { color:var(--white); }
-        .repo-list { display:grid; gap:12px; }
-        .repo-card {
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:10px;
-            padding:16px 20px;
-            display:flex;
-            justify-content:space-between;
-            align-items:flex-start;
-            gap:12px;
-            transition:border-color .2s, transform .2s;
-            text-decoration:none;
-        }
-        .repo-card:hover {
-            border-color:rgba(0,212,255,0.45);
-            transform:translateY(-2px);
-        }
-        .repo-name {
-            font-size:0.9rem;
-            font-weight:600;
-            color:var(--accent);
-            font-family:'JetBrains Mono', monospace;
-            display:flex;
-            align-items:center;
-            gap:7px;
-        }
-        .repo-name svg { width:15px; height:15px; color:var(--text-dim); }
-        .repo-desc { font-size:0.8rem; color:var(--text-dim); margin-top:5px; line-height:1.5; }
-        .repo-lang {
-            font-size:0.72rem;
-            font-family:'JetBrains Mono', monospace;
-            color:var(--text-dim);
-            white-space:nowrap;
-            flex-shrink:0;
-            background:rgba(255,255,255,0.04);
-            border:1px solid rgba(255,255,255,0.08);
-            padding:2px 8px;
-            border-radius:6px;
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 18px 24px;
+
+            margin-bottom: 18px;
         }
 
-        /* HACKING / SECURITY */
+        .github-header svg {
+            color: var(--accent);
+
+            flex-shrink: 0;
+        }
+
+        .github-header a {
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            color: var(--accent);
+
+            text-decoration: none;
+
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .github-header a:hover {
+            color: var(--white);
+        }
+
+        .repo-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .repo-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            padding: 16px 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-start;
+
+            gap: 12px;
+
+            transition:
+                border-color 0.2s,
+                transform 0.2s;
+
+            text-decoration: none;
+        }
+
+        .repo-card:hover {
+            border-color: rgba(0, 212, 255, 0.45);
+
+            transform: translateY(-2px);
+        }
+
+        .repo-name {
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            color: var(--accent);
+
+            font-family: 'JetBrains Mono', monospace;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+        }
+
+        .repo-name svg {
+            width: 15px;
+            height: 15px;
+
+            color: var(--text-dim);
+        }
+
+        .repo-desc {
+            font-size: 0.8rem;
+
+            color: var(--text-dim);
+
+            margin-top: 5px;
+
+            line-height: 1.5;
+        }
+
+        .repo-lang {
+            font-size: 0.72rem;
+
+            font-family: 'JetBrains Mono', monospace;
+
+            color: var(--text-dim);
+
+            white-space: nowrap;
+
+            flex-shrink: 0;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            padding: 2px 8px;
+
+            border-radius: 6px;
+        }
+
+        /* =========================================================
+           HACKING / SECURITY
+        ========================================================= */
+
         .hack-intro {
-            background:var(--card);
-            border:1px solid rgba(255,80,80,0.25);
-            border-radius:12px;
-            padding:18px 24px;
-            margin-bottom:16px;
-            position:relative;
-            overflow:hidden;
+            background: var(--card);
+
+            border: 1px solid rgba(255, 80, 80, 0.25);
+
+            border-radius: 12px;
+
+            padding: 18px 24px;
+
+            margin-bottom: 16px;
+
+            position: relative;
+
+            overflow: hidden;
         }
+
         .hack-intro::before {
-            content:'';
-            position:absolute;
-            left:0; top:0; bottom:0;
-            width:3px;
-            background:linear-gradient(180deg, #ff5050, #ff9900);
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ff5050,
+                    #ff9900
+                );
         }
-        .hack-intro p { font-size:0.87rem; color:var(--text-dim); line-height:1.7; }
-        .hack-intro p strong { color:var(--white); }
+
+        .hack-intro p {
+            font-size: 0.87rem;
+
+            color: var(--text-dim);
+
+            line-height: 1.7;
+        }
+
+        .hack-intro p strong {
+            color: var(--white);
+        }
+
         .hack-stats {
-            display:flex;
-            gap:16px;
-            margin-top:12px;
-            flex-wrap:wrap;
+            display: flex;
+
+            gap: 16px;
+
+            margin-top: 12px;
+
+            flex-wrap: wrap;
         }
+
         .hack-stat {
-            background:rgba(255,80,80,0.08);
-            border:1px solid rgba(255,80,80,0.2);
-            border-radius:8px;
-            padding:8px 16px;
-            text-align:center;
+            background: rgba(255, 80, 80, 0.08);
+
+            border: 1px solid rgba(255, 80, 80, 0.2);
+
+            border-radius: 8px;
+
+            padding: 8px 16px;
+
+            text-align: center;
         }
-        .hack-stat .num { font-size:1.4rem; font-weight:800; color:#ff6b6b; display:block; font-family:'JetBrains Mono', monospace; }
-        .hack-stat .lbl { font-size:0.7rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.5px; }
+
+        .hack-stat .num {
+            font-size: 1.4rem;
+
+            font-weight: 800;
+
+            color: #ff6b6b;
+
+            display: block;
+
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .hack-stat .lbl {
+            font-size: 0.7rem;
+
+            color: var(--text-dim);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+        }
 
         .hack-item {
-            background:var(--card);
-            border:1px solid rgba(255,150,50,0.2);
-            border-radius:10px;
-            padding:16px 20px;
-            margin-bottom:12px;
-            transition:border-color .2s;
+            background: var(--card);
+
+            border: 1px solid rgba(255, 150, 50, 0.2);
+
+            border-radius: 10px;
+
+            padding: 16px 20px;
+
+            margin-bottom: 12px;
+
+            transition: border-color 0.2s;
         }
-        .hack-item:hover { border-color:rgba(255,150,50,0.45); }
-        .hack-item-title { font-size:0.9rem; font-weight:700; color:var(--white); display:flex; align-items:center; gap:8px; }
+
+        .hack-item:hover {
+            border-color: rgba(255, 150, 50, 0.45);
+        }
+
+        .hack-item-title {
+            font-size: 0.9rem;
+
+            font-weight: 700;
+
+            color: var(--white);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
         .hack-badge {
-            font-size:0.65rem;
-            font-weight:700;
-            letter-spacing:1px;
-            text-transform:uppercase;
-            padding:2px 8px;
-            border-radius:4px;
-            font-family:'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            padding: 2px 8px;
+
+            border-radius: 4px;
+
+            font-family: 'JetBrains Mono', monospace;
         }
-        .badge-red { background:rgba(255,80,80,0.15); color:#ff6b6b; border:1px solid rgba(255,80,80,0.3); }
-        .badge-orange { background:rgba(255,150,50,0.12); color:#ffaa44; border:1px solid rgba(255,150,50,0.3); }
-        .hack-item p { font-size:0.82rem; color:var(--text-dim); margin-top:6px; line-height:1.6; }
-        .hack-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+
+        .badge-red {
+            background: rgba(255, 80, 80, 0.15);
+
+            color: #ff6b6b;
+
+            border: 1px solid rgba(255, 80, 80, 0.3);
+        }
+
+        .badge-orange {
+            background: rgba(255, 150, 50, 0.12);
+
+            color: #ffaa44;
+
+            border: 1px solid rgba(255, 150, 50, 0.3);
+        }
+
+        .hack-item p {
+            font-size: 0.82rem;
+
+            color: var(--text-dim);
+
+            margin-top: 6px;
+
+            line-height: 1.6;
+        }
+
+        .hack-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 10px;
+        }
+
         .hack-link {
-            font-size:1rem;
-            color:var(--accent);
-            text-decoration:none;
-            font-family:'JetBrains Mono', monospace;
-            border:1px solid var(--border);
-            background:var(--tag-bg);
-            padding:3px 10px;
-            border-radius:6px;
-            display:flex;
-            align-items:center;
-            gap:5px;
-            transition:all .2s;
-        }
-        .hack-link:hover { background:rgba(0,212,255,0.18); color:var(--white); }
-        .hack-link svg { width:11px; height:11px; }
+            font-size: 1rem;
 
-        /* SKILLS */
-        .skills-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:12px; }
+            color: var(--accent);
+
+            text-decoration: none;
+
+            font-family: 'JetBrains Mono', monospace;
+
+            border: 1px solid var(--border);
+
+            background: var(--tag-bg);
+
+            padding: 3px 10px;
+
+            border-radius: 6px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            transition: all 0.2s;
+        }
+
+        .hack-link:hover {
+            background: rgba(0, 212, 255, 0.18);
+
+            color: var(--white);
+        }
+
+        .hack-link svg {
+            width: 11px;
+            height: 11px;
+        }
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fill,
+                    minmax(200px, 1fr)
+                );
+
+            gap: 12px;
+        }
+
         .skill-chip {
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:10px;
-            padding:12px 16px;
-            font-size:0.82rem;
-            color:var(--text);
-            display:flex;
-            align-items:center;
-            gap:10px;
-            transition:border-color .2s, transform .2s;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            padding: 12px 16px;
+
+            font-size: 0.82rem;
+
+            color: var(--text);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            transition:
+                border-color 0.2s,
+                transform 0.2s;
         }
-        .skill-chip:hover { border-color:rgba(0,212,255,0.45); transform:scale(1.02); }
-        .skill-chip .icon { font-size:1.1rem; flex-shrink:0; }
+
+        .skill-chip:hover {
+            border-color: rgba(0, 212, 255, 0.45);
+
+            transform: scale(1.02);
+        }
+
+        .skill-chip .icon {
+            font-size: 1.1rem;
+
+            flex-shrink: 0;
+        }
+
         .skill-cat {
-            font-size:0.7rem;
-            font-weight:700;
-            letter-spacing:1px;
-            text-transform:uppercase;
-            color:var(--accent3);
-            font-family:'JetBrains Mono', monospace;
-            margin:18px 0 10px;
+            font-size: 0.7rem;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            color: var(--accent3);
+
+            font-family: 'JetBrains Mono', monospace;
+
+            margin: 18px 0 10px;
         }
 
-        /* FOOTER */
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
         .footer {
-            text-align:center;
-            padding:32px;
-            border-top:1px solid var(--border);
-            font-size:0.78rem;
-            color:var(--text-dim);
-            font-family:'JetBrains Mono', monospace;
-        }
-        .footer a { color:var(--accent); text-decoration:none; }
-        .footer a:hover { color:var(--white); }
+            text-align: center;
 
-        /* PRINT */
+            padding: 32px;
+
+            border-top: 1px solid var(--border);
+
+            font-size: 0.78rem;
+
+            color: var(--text-dim);
+
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .footer a {
+            color: var(--accent);
+
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        /* =========================================================
+           PRINT
+        ========================================================= */
+
         @media print {
-            body { background:#fff; color:#000; }
-            .nav-dots { display:none; }
-            .header { background:#1a3050; }
-            .download-cv-btn { display: none; }
-        }
 
-        @media (max-width:600px) {
-            .header { padding:28px 20px 24px; }
-            .header-inner { flex-direction:column; align-items:flex-start; }
-            .header-text h1 { font-size:1.7rem; }
-            .main { padding:24px 16px 40px; }
-            .nav-dots { flex-wrap:wrap; }
+            body {
+                background: #fff;
+                color: #000;
+            }
+
+            .nav-dots {
+                display: none;
+            }
+
+            .header {
+                background: #1a3050;
+            }
+
             .download-cv-btn {
-                position: static;
-                margin-top: 20px;
-                align-self: flex-start;
+                display: none;
             }
         }
 
-        /* CERTIFICATE MODAL */
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 28px 20px 24px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .header-text h1 {
+                font-size: 1.7rem;
+            }
+
+            .main {
+                padding: 24px 16px 40px;
+            }
+
+            .nav-dots {
+                flex-wrap: wrap;
+            }
+
+            .download-cv-btn {
+                position: static;
+
+                margin-top: 20px;
+
+                align-self: flex-start;
+            }
+
+            .hack-item-title {
+                flex-wrap: wrap;
+            }
+
+            .repo-card {
+                flex-direction: column;
+            }
+        }
+
+        /* =========================================================
+           CERTIFICATE MODAL
+        ========================================================= */
+
         .modal {
             display: none;
+
             position: fixed;
+
             z-index: 10000;
+
             left: 0;
             top: 0;
+
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
+
+            background-color: rgba(0, 0, 0, 0.9);
+
             animation: fadeIn 0.3s;
         }
+
         .modal.show {
             display: flex;
+
             justify-content: center;
+
             align-items: center;
         }
+
         .modal-content {
             background-color: #152035;
+
             max-width: 90%;
             max-height: 90%;
+
             overflow: auto;
+
             border-radius: 12px;
+
             position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.5);
+
             border: 1px solid var(--border);
         }
+
         .modal-content img {
             width: 100%;
+
             height: auto;
+
             display: block;
+
             border-radius: 8px;
         }
+
         .close-btn {
             position: absolute;
+
             right: 20px;
             top: 20px;
-            background: rgba(0,0,0,0.8);
+
+            background: rgba(0, 0, 0, 0.8);
+
             color: white;
+
             border: none;
+
             padding: 8px 16px;
+
             font-size: 28px;
+
             cursor: pointer;
+
             border-radius: 50%;
+
             transition: background 0.2s;
+
             font-weight: bold;
+
             z-index: 10;
         }
+
         .close-btn:hover {
             background: #ff4444;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <a href="index.html" class="download-cv-btn" download="Dulanka_Charidu_Karandeniya_CV_2026.pdf" target="_blank" id="secureBtn">
-        <svg viewBox="0 0 25 25" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M16 13v5"></path><path d="M8 18h8"></path></svg>
-        DOWNLOAD CV (PDF)
-    </a></br>
-    
-    <div class="header-inner">
-        <div class="avatar-wrap">
-            <img src="https://i.ibb.co/LzDWrwTx/profilepic.jpg" alt="Dulanka is a dev" style="width:180px;height:180px;border-radius:50%;border:3px solid #00d4ff;object-fit:cover;">
-            <div class="avatar-ring"></div>
-        </div>
-        <div class="header-text">
-            <h1>Dulanka <span>Charidu</span><br>Karandeniya</h1>
-            <div class="tagline">
-                 <span class="tag">Dulanka is a Dev</span>
-                <span class="tag">IT Executive</span>
-                <span class="tag">Senior IT Technician</span>
-                <span class="tag">Project Manager</span>
-                <span class="tag green">SOC Analyst</span>
-                <span class="tag green">Ethical Hacker</span>
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header class="header">
+
+        <!--
+            IMPORTANT:
+            This is now a BUTTON instead of an <a>.
+            Therefore the browser cannot accidentally follow
+            index.html or another href before the password check.
+        -->
+
+        <button
+            type="button"
+            class="download-cv-btn"
+            id="secureBtn"
+        >
+
+            <svg
+                viewBox="0 0 25 25"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+            >
+                <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+
+                <polyline
+                    points="14 2 14 8 20 8"
+                ></polyline>
+
+                <path d="M16 13v5"></path>
+
+                <path d="M8 18h8"></path>
+            </svg>
+
+            DOWNLOAD CV (PDF)
+
+        </button>
+
+        <div class="header-inner">
+
+            <div class="avatar-wrap">
+
+                <img
+                    src="https://i.ibb.co/LzDWrwTx/profilepic.jpg"
+                    alt="Dulanka is a dev"
+                    style="
+                        width:180px;
+                        height:180px;
+                        border-radius:50%;
+                        border:3px solid #00d4ff;
+                        object-fit:cover;
+                    "
+                >
+
+                <div class="avatar-ring"></div>
+
             </div>
-            <div class="contact-row">
-                <span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    Gangarama Road, Werahara, Boralesgamuwa
+
+            <div class="header-text">
+
+                <h1>
+                    Dulanka
+                    <span>Charidu</span>
+                    <br>
+                    Karandeniya
+                </h1>
+
+                <div class="tagline">
+
+                    <span class="tag">
+                        Dulanka is a Dev
+                    </span>
+
+                    <span class="tag">
+                        IT Executive
+                    </span>
+
+                    <span class="tag">
+                        Senior IT Technician
+                    </span>
+
+                    <span class="tag">
+                        Project Manager
+                    </span>
+
+                    <span class="tag green">
+                        SOC Analyst
+                    </span>
+
+                    <span class="tag green">
+                        Ethical Hacker
+                    </span>
+
+                </div>
+
+                <div class="contact-row">
+
+                    <span>
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                            ></path>
+
+                            <circle
+                                cx="12"
+                                cy="10"
+                                r="3"
+                            ></circle>
+                        </svg>
+
+                        Gangarama Road, Werahara, Boralesgamuwa
+
+                    </span>
+
+                    <a href="mailto:dulankacharidu@gmail.com">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                            ></path>
+
+                            <polyline
+                                points="22,6 12,12 2,6"
+                            ></polyline>
+                        </svg>
+
+                        dulankacharidu@gmail.com
+
+                    </a>
+
+                    <a href="tel:+94776009919">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2
+                                19.79 19.79 0 0 1-8.63-3.07
+                                A19.5 19.5 0 0 1 4.69 13
+                                19.79 19.79 0 0 1 1.61 4.4
+                                2 2 0 0 1 3.59 2.2h3a2 2
+                                0 0 1 2 1.72c.127.96.361
+                                1.903.7 2.81a2 2 0 0 1-.45
+                                2.11L7.91 9.91a16 16 0 0 0
+                                6.08 6.08l.91-.91a2 2 0 0
+                                1 2.11-.45c.907.339 1.85
+                                .573 2.81.7A2 2 0 0 1
+                                22 16.92z"
+                            ></path>
+                        </svg>
+
+                        +94 77 600 9919
+
+                    </a>
+
+                    <span>
+                        <br>
+                        <br>
+                    </span>
+
+                    <a
+                        href="https://github.com/dulankacharidu"
+                        target="_blank"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M12 0C5.374 0 0 5.373 0 12c0
+                                5.302 3.438 9.8 8.207
+                                11.387.599.111.793-.261
+                                .793-.577v-2.234c-3.338.726
+                                -4.033-1.416-4.033-1.416
+                                -.546-1.387-1.333-1.756
+                                -1.333-1.756-1.089-.745.083
+                                -.729.083-.729 1.205.084
+                                1.839 1.237 1.839 1.237
+                                1.07 1.834 2.807 1.304
+                                3.492.997.107-.775.418
+                                -1.305.762-1.604-2.665
+                                -.305-5.467-1.334-5.467
+                                -5.931 0-1.311.469-2.381
+                                1.236-3.221-.124-.303-.535
+                                -1.524.117-3.176 0 0
+                                1.008-.322 3.301 1.23
+                                A11.509 11.509 0 0 1 12
+                                5.803c1.02.005 2.047.138
+                                3.006.404 2.291-1.552
+                                3.297-1.23 3.297-1.23
+                                .653 1.653.242 2.874.118
+                                3.176.77.84 1.235 1.911
+                                1.235 3.221 0 4.609-2.807
+                                5.624-5.479 5.921.43.372
+                                .823 1.102.823 2.222v3.293
+                                c0 .319.192.694.801.576
+                                C20.566 21.797 24 17.3
+                                24 12c0-6.627-5.373-12-12-12z"
+                            ></path>
+                        </svg>
+
+                        github.com/dulankacharidu
+
+                    </a>
+
+                    <span>
+                        DOB: 1993-07-10
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================================
+         STICKY NAV
+    ========================================================= -->
+
+    <nav class="nav-dots">
+
+        <a href="#objective">
+            Objective
+        </a>
+
+        <a href="#experience">
+            Experience
+        </a>
+
+        <a href="#education">
+            Education
+        </a>
+
+        <a href="#github">
+            GitHub
+        </a>
+
+        <a href="#security">
+            Security Research
+        </a>
+
+        <a href="#skills">
+            Skills
+        </a>
+
+    </nav>
+
+    <!-- =========================================================
+         MAIN
+    ========================================================= -->
+
+    <main class="main">
+
+        <!-- =====================================================
+             OBJECTIVE
+        ===================================================== -->
+
+        <section
+            class="section"
+            id="objective"
+        >
+
+            <div class="section-title">
+                Objective
+            </div>
+
+            <div class="objective-card">
+
+                <p>
+                    Results-driven
+                    <strong>
+                        Cybersecurity Specialist, IT Executive, and SOC Analyst
+                    </strong>
+                    with over a decade of hands-on experience spanning
+                    penetration testing, network engineering, CCTV security
+                    architecture, and enterprise IT project management.
+                    I bring a rare combination of deep technical expertise
+                    and entrepreneurial leadership — having founded and
+                    managed multiple technology ventures serving both
+                    government and private-sector clients across Sri Lanka.
+                </p>
+
+                <p style="margin-top:12px;">
+
+                    My work in ethical hacking and vulnerability research
+                    has directly contributed to securing national-level
+                    infrastructure, with notable security disclosures
+                    and coordinated patch work across high-profile
+                    Sri Lankan organizations. I am equally passionate
+                    about next-generation technologies including
+                    <strong>
+                        AI-powered MCP agents, IoT smart-home integration,
+                        and SOC operations
+                    </strong>
+                    — and I actively build open-source tools that bridge
+                    complex security challenges with real-world usability.
+
+                </p>
+
+                <p style="margin-top:12px;">
+
+                    Seeking a senior-level opportunity where I can leverage
+                    my multi-disciplinary skill set to drive organizational
+                    security posture, lead innovative technology initiatives,
+                    and deliver measurable impact at scale.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             WORK EXPERIENCE
+        ===================================================== -->
+
+        <section
+            class="section"
+            id="experience"
+        >
+
+            <div class="section-title">
+                Work Experience
+            </div>
+
+            <!-- Virtual Creation -->
+
+            <div class="exp-item">
+
+                <div class="exp-header">
+
+                    <div>
+
+                        <div class="exp-title">
+                            Managing Director &amp; Senior IT Technician
+                        </div>
+
+                        <div class="exp-company">
+
+                            Virtual Creation —
+
+                            <a
+                                href="https://fb.com/vcreation.lk"
+                                target="_blank"
+                                style="
+                                    color:inherit;
+                                    font-size:0.78rem;
+                                "
+                            >
+                                fb.com/vcreation.lk
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <span class="exp-date">
+                        Mar 2015 — Present
+                    </span>
+
+                </div>
+
+                <p class="exp-desc">
+
+                    Overseeing all aspects of business operations while
+                    leading delivery of complex IT, CCTV, networking,
+                    and smart-technology projects for government and
+                    private clients island-wide.
+
+                </p>
+
+                <ul class="exp-bullets">
+
+                    <li>
+                        Directed installation and maintenance of enterprise
+                        CCTV security systems
+                    </li>
+
+                    <li>
+                        Deployed burglar alarm systems with full programming
+                        and commissioning
+                    </li>
+
+                    <li>
+                        Managed fiber optic connection wiring and
+                        infrastructure projects
+                    </li>
+
+                    <li>
+                        Specialized in networking solutions, structured
+                        cabling (Coaxial, Cat5e, Cat6e, Fiber)
+                    </li>
+
+                    <li>
+                        Installed and maintained access control devices
+                        and time-attendance systems
+                    </li>
+
+                    <li>
+                        Oversaw vehicle GPS system installation and fleet
+                        management integrations
+                    </li>
+
+                    <li>
+                        Delivered smart home IoT device integration and
+                        automation solutions
+                    </li>
+
+                    <li>
+                        Provided web and software solutions, offset and
+                        digital printing services
+                    </li>
+
+                </ul>
+
+                <div class="exp-projects">
+
+                    <span>
+                        Notable Clients
+                    </span>
+
+                    <div class="proj-chips">
+
+                        <span class="proj-chip">
+                            Miloda Academy of Financial Studies
+                        </span>
+
+                        <span class="proj-chip">
+                            Ambewela Milk Factory
+                        </span>
+
+                        <span class="proj-chip">
+                            Mr. Harpoo Hotels
+                        </span>
+
+                        <span class="proj-chip">
+                            Kalubowila Teaching Hospital
+                        </span>
+
+                        <span class="proj-chip">
+                            Career141 Consultant Pvt Ltd
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DC Construction -->
+
+            <div class="exp-item">
+
+                <div class="exp-header">
+
+                    <div>
+
+                        <div class="exp-title">
+                            Managing Director &amp; Senior Technician
+                        </div>
+
+                        <div class="exp-company">
+
+                            DC Construction &amp; Electrical —
+
+                            <a
+                                href="https://fb.com/dcreation.lk"
+                                target="_blank"
+                                style="
+                                    color:inherit;
+                                    font-size:0.78rem;
+                                "
+                            >
+                                fb.com/dcreation.lk
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <span class="exp-date">
+                        Mar 2015 — Present
+                    </span>
+
+                </div>
+
+                <p class="exp-desc">
+
+                    Providing end-to-end construction, electrical,
+                    and network engineering services with a focus
+                    on quality delivery and technical innovation.
+
+                </p>
+
+                <ul class="exp-bullets">
+
+                    <li>
+                        Conducted house wiring, circuit diagram design,
+                        and panel installations
+                    </li>
+
+                    <li>
+                        Specialized in fiber optic wiring and structured
+                        network design
+                    </li>
+
+                    <li>
+                        Managed house construction and large-scale
+                        renovation projects
+                    </li>
+
+                    <li>
+                        Expertise in network infrastructure design
+                        and deployment
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Systec -->
+
+            <div class="exp-item">
+
+                <div class="exp-header">
+
+                    <div>
+
+                        <div class="exp-title">
+                            IT &amp; CCTV Technician
+                        </div>
+
+                        <div class="exp-company">
+                            Systec Solution Pvt Ltd — Sri Lanka
+                        </div>
+
+                    </div>
+
+                    <span class="exp-date">
+                        Feb 2013 — Mar 2015
+                    </span>
+
+                </div>
+
+                <p class="exp-desc">
+
+                    Provided technical support, solutions, and on-site
+                    services to corporate clients across various industries.
+
+                </p>
+
+                <ul class="exp-bullets">
+
+                    <li>
+                        Installed and maintained CCTV surveillance systems
+                    </li>
+
+                    <li>
+                        Conducted device maintenance and component replacements
+                    </li>
+
+                    <li>
+                        Implemented access control and time-attendance systems
+                    </li>
+
+                    <li>
+                        Executed gate barrier installation and maintenance
+                    </li>
+
+                    <li>
+                        Managed vehicle GPS system installation projects
+                    </li>
+
+                </ul>
+
+                <div class="exp-projects">
+
+                    <span>
+                        Key Projects
+                    </span>
+
+                    <div class="proj-chips">
+
+                        <span class="proj-chip">
+                            Sri Lanka Telecom
+                        </span>
+
+                        <span class="proj-chip">
+                            Dialog Axiata Outdoor 4G
+                        </span>
+
+                        <span class="proj-chip">
+                            N and Y Investment Company
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             EDUCATION
+        ===================================================== -->
+
+        <section
+            class="section"
+            id="education"
+        >
+
+            <div class="section-title">
+                Education &amp; Certifications
+            </div>
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Software Engineering High Diploma
+                    </div>
+
+                    <div class="edu-institute">
+                        Java Institute for Advanced Technology
+                    </div>
+
+                </div>
+
+                <span class="edu-year">
+                    2012 — 2014
                 </span>
-                <a href="mailto:dulankacharidu@gmail.com">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,12 2,6"></polyline></svg>
-                    dulankacharidu@gmail.com
-                </a>
-                <a href="tel:+94776009919">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.4 2 2 0 0 1 3.59 2.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    +94 77 600 9919
-                </a>  
-               <span><br><br></span> 
-                <a href="https://github.com/dulankacharidu" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"></path></svg>
+
+            </div>
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Java Standalone Application Developer
+                    </div>
+
+                    <div class="edu-institute">
+                        Java Institute for Advanced Technology
+                    </div>
+
+                </div>
+
+                <span class="edu-year">
+                    Certified
+                </span>
+
+            </div>
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Certified Information Security Expert (CISE)
+                    </div>
+
+                    <div class="edu-institute">
+                        Innobuzz Learning Solutions LLP
+                    </div>
+
+                    <a
+                        onclick="openCertificate('cert-cise')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5
+                                a2 2 0 0 1-2-2V8a2 2 0
+                                0 0 1 2-2h6"
+                            ></path>
+
+                            <polyline
+                                points="15 3 21 3 21 9"
+                            ></polyline>
+
+                            <line
+                                x1="10"
+                                y1="14"
+                                x2="21"
+                                y2="3"
+                            ></line>
+                        </svg>
+
+                        View Certificate
+
+                    </a>
+
+                </div>
+
+                <span class="edu-year">
+                    Certified
+                </span>
+
+            </div>
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Certified Ethical Hacker (CEH) — Reverse Engineering
+                    </div>
+
+                    <div class="edu-institute">
+                        EC-Council
+                    </div>
+
+                    <a
+                        onclick="openCertificate('cert-reveng')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5
+                                a2 2 0 0 1-2-2V8a2 2
+                                0 0 1 2-2h6"
+                            ></path>
+
+                            <polyline
+                                points="15 3 21 3 21 9"
+                            ></polyline>
+
+                            <line
+                                x1="10"
+                                y1="14"
+                                x2="21"
+                                y2="3"
+                            ></line>
+                        </svg>
+
+                        View Certificate
+
+                    </a>
+
+                </div>
+
+                <span class="edu-year">
+                    Certified
+                </span>
+
+            </div>
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Certified Ethical Hacker (CEH) —
+                        Android Bug Bounty Hunting
+                    </div>
+
+                    <div class="edu-institute">
+                        EC-Council
+                    </div>
+
+                    <a
+                        onclick="openCertificate('cert-android')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5
+                                a2 2 0 0 1-2-2V8a2 2
+                                0 0 1 2-2h6"
+                            ></path>
+
+                            <polyline
+                                points="15 3 21 3 21 9"
+                            ></polyline>
+
+                            <line
+                                x1="10"
+                                y1="14"
+                                x2="21"
+                                y2="3"
+                            ></line>
+                        </svg>
+
+                        View Certificate
+
+                    </a>
+
+                </div>
+
+                <span class="edu-year">
+                    Certified
+                </span>
+
+            </div>
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Certified Ethical Hacker (CEH) —
+                        Dark Web, Anonymity &amp; OSINT
+                    </div>
+
+                    <div class="edu-institute">
+                        EC-Council
+                    </div>
+
+                    <a
+                        onclick="openCertificate('cert-darkweb')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5
+                                a2 2 0 0 1-2-2V8a2 2
+                                0 0 1 2-2h6"
+                            ></path>
+
+                            <polyline
+                                points="15 3 21 3 21 9"
+                            ></polyline>
+
+                            <line
+                                x1="10"
+                                y1="14"
+                                x2="21"
+                                y2="3"
+                            ></line>
+                        </svg>
+
+                        View Certificate
+
+                    </a>
+
+                </div>
+
+                <span class="edu-year">
+                    Certified
+                </span>
+
+            </div>
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Diploma in Mobile Phone Repairing
+                    </div>
+
+                    <div class="edu-institute">
+                        SWOT Education
+                    </div>
+
+                    <a
+                        onclick="openCertificate('phone')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5
+                                a2 2 0 0 1-2-2V8a2 2
+                                0 0 1 2-2h6"
+                            ></path>
+
+                            <polyline
+                                points="15 3 21 3 21 9"
+                            ></polyline>
+
+                            <line
+                                x1="10"
+                                y1="14"
+                                x2="21"
+                                y2="3"
+                            ></line>
+                        </svg>
+
+                        View Certificate
+
+                    </a>
+
+                </div>
+
+                <span class="edu-year">
+                    Certified
+                </span>
+
+            </div>
+
+            <!-- Company Certificates -->
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Company Project Certificates
+                    </div>
+
+                    <div class="edu-institute">
+                        Career141 &amp; Asoka School
+                    </div>
+
+                    <a
+                        onclick="openCertificate('cert-company1')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+                        View Certificate 1
+                    </a>
+
+                    <a
+                        onclick="openCertificate('cert-company2')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+                        View Certificate 2
+                    </a>
+
+                </div>
+
+                <span class="edu-year">
+                    2020
+                </span>
+
+            </div>
+
+            <!-- Amateur Radio -->
+
+            <div class="edu-item">
+
+                <div class="edu-left">
+
+                    <div class="edu-degree">
+                        Official TRCSL Amateur Radio licensed
+                    </div>
+
+                    <div class="edu-institute">
+
+                        Call sign:
+                        RS1601 🇱🇰📻
+
+                    </div>
+
+                    <a
+                        onclick="openCertificate('ham-radio')"
+                        style="cursor:pointer;"
+                        class="edu-cert-link"
+                    >
+                        View Certificate 1
+                    </a>
+
+                </div>
+
+                <span class="edu-year">
+                    2026
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             GITHUB
+        ===================================================== -->
+
+        <section
+            class="section"
+            id="github"
+        >
+
+            <div class="section-title">
+                GitHub — Open Source Projects
+            </div>
+
+            <div class="github-header">
+
+                <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+
+                    <path
+                        d="M12 0C5.374 0 0 5.373 0
+                        12c0 5.302 3.438 9.8
+                        8.207 11.387.599.111
+                        .793-.261.793-.577v-2.234
+                        c-3.338.726-4.033-1.416
+                        -4.033-1.416-.546-1.387
+                        -1.333-1.756-1.333-1.756
+                        -1.089-.745.083-.729.083
+                        -.729 1.205.084 1.839 1.237
+                        1.839 1.237 1.07 1.834
+                        2.807 1.304 3.492.997
+                        .107-.775.418-1.305.762
+                        -1.604-2.665-.305-5.467
+                        -1.334-5.467-5.931
+                        0-1.311.469-2.381
+                        1.236-3.221-.124-.303
+                        -.535-1.524.117-3.176
+                        0 0 1.008-.322 3.301
+                        1.23A11.509 11.509 0 0 1
+                        12 5.803c1.02.005 2.047
+                        .138 3.006.404 2.291-1.552
+                        3.297-1.23 3.297-1.23
+                        .653 1.653.242 2.874.118
+                        3.176.77.84 1.235 1.911
+                        1.235 3.221 0 4.609-2.807
+                        5.624-5.479 5.921.43.372
+                        .823 1.102.823 2.222v3.293
+                        c0 .319.192.694.801.576
+                        C20.566 21.797 24 17.3
+                        24 12c0-6.627-5.373-12-12-12z"
+                    ></path>
+
+                </svg>
+
+                <a
+                    href="https://github.com/dulankacharidu"
+                    target="_blank"
+                >
                     github.com/dulankacharidu
                 </a>
-                <span>DOB: 1993-07-10</span>
+
             </div>
-        </div>
-    </div>
-</header>
 
-<!-- STICKY NAV -->
-<nav class="nav-dots">
-    <a href="#objective">Objective</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#github">GitHub</a>
-    <a href="#security">Security Research</a>
-    <a href="#skills">Skills</a>
-</nav>
+            <div class="repo-list">
 
-<!-- MAIN -->
-<main class="main">
+                <a
+                    class="repo-card"
+                    href="https://github.com/dulankacharidu/Text.Me"
+                    target="_blank"
+                >
 
-    <!-- OBJECTIVE -->
-    <section class="section" id="objective">
-        <div class="section-title">Objective</div>
-        <div class="objective-card">
-            <p>
-                Results-driven <strong>Cybersecurity Specialist, IT Executive, and SOC Analyst</strong> with over a decade of hands-on experience spanning penetration testing, network engineering, CCTV security architecture, and enterprise IT project management. I bring a rare combination of deep technical expertise and entrepreneurial leadership — having founded and managed multiple technology ventures serving both government and private-sector clients across Sri Lanka.
-            </p>
-            <p style="margin-top:12px;">
-                My work in ethical hacking and vulnerability research has directly contributed to securing national-level infrastructure, with notable security disclosures and coordinated patch work across high-profile Sri Lankan organizations. I am equally passionate about next-generation technologies including <strong>AI-powered MCP agents, IoT smart-home integration, and SOC operations</strong> — and I actively build open-source tools that bridge complex security challenges with real-world usability.
-            </p>
-            <p style="margin-top:12px;">
-                Seeking a senior-level opportunity where I can leverage my multi-disciplinary skill set to drive organizational security posture, lead innovative technology initiatives, and deliver measurable impact at scale.
-            </p>
-        </div>
-    </section>
+                    <div>
 
-    <!-- WORK EXPERIENCE -->
-    <section class="section" id="experience">
-        <div class="section-title">Work Experience</div>
+                        <div class="repo-name">
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <div class="exp-title">Managing Director &amp; Senior IT Technician</div>
-                    <div class="exp-company">Virtual Creation — <a href="https://fb.com/vcreation.lk" target="_blank" style="color:inherit;font-size:0.78rem;">fb.com/vcreation.lk</a></div>
-                </div>
-                <span class="exp-date">Mar 2015 — Present</span>
-            </div>
-            <p class="exp-desc">Overseeing all aspects of business operations while leading delivery of complex IT, CCTV, networking, and smart-technology projects for government and private clients island-wide.</p>
-            <ul class="exp-bullets">
-                <li>Directed installation and maintenance of enterprise CCTV security systems</li>
-                <li>Deployed burglar alarm systems with full programming and commissioning</li>
-                <li>Managed fiber optic connection wiring and infrastructure projects</li>
-                <li>Specialized in networking solutions, structured cabling (Coaxial, Cat5e, Cat6e, Fiber)</li>
-                <li>Installed and maintained access control devices and time-attendance systems</li>
-                <li>Oversaw vehicle GPS system installation and fleet management integrations</li>
-                <li>Delivered smart home IoT device integration and automation solutions</li>
-                <li>Provided web and software solutions, offset and digital printing services</li>
-            </ul>
-            <div class="exp-projects">
-                <span>Notable Clients</span>
-                <div class="proj-chips">
-                    <span class="proj-chip">Miloda Academy of Financial Studies</span>
-                    <span class="proj-chip">Ambewela Milk Factory</span>
-                    <span class="proj-chip">Mr. Harpoo Hotels</span>
-                    <span class="proj-chip">Kalubowila Teaching Hospital</span>
-                    <span class="proj-chip">Career141 Consultant Pvt Ltd</span>
-                </div>
-            </div>
-        </div>
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M3 3h18v18H3zM3 9h18M9 21V9"
+                                ></path>
+                            </svg>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <div class="exp-title">Managing Director &amp; Senior Technician</div>
-                    <div class="exp-company">DC Construction &amp; Electrical — <a href="https://fb.com/dcreation.lk" target="_blank" style="color:inherit;font-size:0.78rem;">fb.com/dcreation.lk</a></div>
-                </div>
-                <span class="exp-date">Mar 2015 — Present</span>
-            </div>
-            <p class="exp-desc">Providing end-to-end construction, electrical, and network engineering services with a focus on quality delivery and technical innovation.</p>
-            <ul class="exp-bullets">
-                <li>Conducted house wiring, circuit diagram design, and panel installations</li>
-                <li>Specialized in fiber optic wiring and structured network design</li>
-                <li>Managed house construction and large-scale renovation projects</li>
-                <li>Expertise in network infrastructure design and deployment</li>
-            </ul>
-        </div>
+                            Text.Me
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <div class="exp-title">IT &amp; CCTV Technician</div>
-                    <div class="exp-company">Systec Solution Pvt Ltd — Sri Lanka</div>
-                </div>
-                <span class="exp-date">Feb 2013 — Mar 2015</span>
-            </div>
-            <p class="exp-desc">Provided technical support, solutions, and on-site services to corporate clients across various industries.</p>
-            <ul class="exp-bullets">
-                <li>Installed and maintained CCTV surveillance systems</li>
-                <li>Conducted device maintenance and component replacements</li>
-                <li>Implemented access control and time-attendance systems</li>
-                <li>Executed gate barrier installation and maintenance</li>
-                <li>Managed vehicle GPS system installation projects</li>
-            </ul>
-            <div class="exp-projects">
-                <span>Key Projects</span>
-                <div class="proj-chips">
-                    <span class="proj-chip">Sri Lanka Telecom</span>
-                    <span class="proj-chip">Dialog Axiata Outdoor 4G</span>
-                    <span class="proj-chip">N and Y Investment Company</span>
-                </div>
-            </div>
-        </div>
-    </section>
+                        </div>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-        <div class="section-title">Education &amp; Certifications</div>
+                        <div class="repo-desc">
 
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Software Engineering High Diploma</div>
-                <div class="edu-institute">Java Institute for Advanced Technology</div>
-            </div>
-            <span class="edu-year">2012 — 2014</span>
-        </div>
+                            High-performance local network messaging
+                            system — send text messages between devices
+                            without internet over Wi-Fi. Fast, reliable,
+                            and fully offline capable.
 
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Java Standalone Application Developer</div>
-                <div class="edu-institute">Java Institute for Advanced Technology</div>
-            </div>
-            <span class="edu-year">Certified</span>
-        </div>
+                        </div>
 
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Certified Information Security Expert (CISE)</div>
-                <div class="edu-institute">Innobuzz Learning Solutions LLP</div>
-                <a onclick="openCertificate('cert-cise')" style="cursor:pointer;" class="edu-cert-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    View Certificate
-                </a>
-            </div>
-            <span class="edu-year">Certified</span>
-        </div>
-
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Certified Ethical Hacker (CEH) — Reverse Engineering</div>
-                <div class="edu-institute">EC-Council</div>
-                <a onclick="openCertificate('cert-reveng')" style="cursor:pointer;" class="edu-cert-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    View Certificate
-                </a>
-            </div>
-            <span class="edu-year">Certified</span>
-        </div>
-
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Certified Ethical Hacker (CEH) — Android Bug Bounty Hunting</div>
-                <div class="edu-institute">EC-Council</div>
-                <a onclick="openCertificate('cert-android')" style="cursor:pointer;" class="edu-cert-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    View Certificate
-                </a>
-            </div>
-            <span class="edu-year">Certified</span>
-        </div>
-
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Certified Ethical Hacker (CEH) — Dark Web, Anonymity &amp; OSINT</div>
-                <div class="edu-institute">EC-Council</div>
-                <a onclick="openCertificate('cert-darkweb')" style="cursor:pointer;" class="edu-cert-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    View Certificate
-                </a>
-            </div>
-            <span class="edu-year">Certified</span>
-        </div>
-
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Diploma in Mobile Phone Repairing</div>
-                <div class="edu-institute">SWOT Education</div>
-                <a onclick="openCertificate('phone')" style="cursor:pointer;" class="edu-cert-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    View Certificate
-                </a>
-            </div>
-            <span class="edu-year">Certified</span>
-        </div>
-
-        <!-- Additional Company / Other Certificates -->
-        <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Company Project Certificates</div>
-                <div class="edu-institute">Career141 &amp; Asoka School</div>
-                <a onclick="openCertificate('cert-company1')" style="cursor:pointer;" class="edu-cert-link">View Certificate 1</a>
-                <a onclick="openCertificate('cert-company2')" style="cursor:pointer;" class="edu-cert-link">View Certificate 2</a>
-            </div>
-            <span class="edu-year">2020</span>
-        </div>
-         <div class="edu-item">
-            <div class="edu-left">
-                <div class="edu-degree">Official TRCSL Amateur Radio licensed </div>
-                <div class="edu-institute">Call sign: RS1601 🇱🇰📻
-                    
-                </div>
-                <a onclick="openCertificate('ham-radio')" style="cursor:pointer;" class="edu-cert-link">View Certificate 1</a>
-            </div>
-            <span class="edu-year">2026</span>
-        </div>
-
-    </section>
-
-    <!-- GITHUB -->
-    <section class="section" id="github">
-        <div class="section-title">GitHub — Open Source Projects</div>
-        <div class="github-header">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"></path></svg>
-            <a href="https://github.com/dulankacharidu" target="_blank">github.com/dulankacharidu</a>
-        </div>
-        <div class="repo-list">
-            <!-- Repos remain unchanged as per your request -->
-            <a class="repo-card" href="https://github.com/dulankacharidu/Text.Me" target="_blank">
-                <div>
-                    <div class="repo-name">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"></path></svg>
-                        Text.Me
                     </div>
-                    <div class="repo-desc">High-performance local network messaging system — send text messages between devices without internet over Wi-Fi. Fast, reliable, and fully offline capable.</div>
-                </div>
-                <span class="repo-lang">JavaScript ★2</span>
-            </a>
-             <a class="repo-card" href="https://github.com/dulankacharidu/InfoHub_Toolkit" target="_blank">
-                <div>
-                    <div class="repo-name">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"></path></svg>
-                        Ethical Hacking Info Gathering all in One Toolkit by Me 😊
-                    </div>
-                    <div class="repo-desc">Ethical hacking information gathering course materials.Full fill auromates all ofjer information gathering tools in oneplace woth how to doing and description pf that tools to learn ethical hackimg main part of Information gathering (footprinting).</div>
-                </div>
-                <span class="repo-lang">Python ★2</span>
-            </a>
 
+                    <span class="repo-lang">
+                        JavaScript ★2
+                    </span>
 
-            <a class="repo-card" href="https://github.com/dulankacharidu/DuLu-ui" target="_blank">
-                <div>
-                    <div class="repo-name">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                        DuLu-ui
-                    </div>
-                    <div class="repo-desc">Xray V2Ray panel supporting multi-protocol and multi-user operation on Linux — advanced proxy and tunneling management interface.</div>
-                </div>
-                <span class="repo-lang">JavaScript ★3</span>
-            </a>
-
-            <a class="repo-card" href="https://github.com/dulankacharidu/Ezviz_Unbind_Hack" target="_blank">
-                <div>
-                    <div class="repo-name">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                        Ezviz_Unbind_Hack
-                    </div>
-                    <div class="repo-desc">Security research tool demonstrating how to view a previously bound Ezviz camera on a new device — useful for legitimate device recovery and security auditing.</div>
-                </div>
-                <span class="repo-lang">Research ★1</span>
-            </a>
-
-            <a class="repo-card" href="https://github.com/dulankacharidu/Whatsapp_Link_Generator" target="_blank">
-                <div>
-                    <div class="repo-name">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                        Whatsapp_Link_Generator
-                    </div>
-                    <div class="repo-desc">Simple web tool to generate click-to-chat WhatsApp links without saving contact numbers. Eliminates manual phone number formatting for businesses and developers.</div>
-                </div>
-                <span class="repo-lang">HTML ★2</span>
-            </a>
-
-            <a class="repo-card" href="https://github.com/dulankacharidu/dulankacharidu" target="_blank">
-                <div>
-                    <div class="repo-name">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        dulankacharidu (Profile README)
-                    </div>
-                    <div class="repo-desc">GitHub profile repository showcasing expertise as a Cyber Security Specialist, Penetration Tester, Bug Hunter, and Software Developer for government and private projects.</div>
-                </div>
-                <span class="repo-lang">Markdown</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- SECURITY RESEARCH -->
-    <section class="section" id="security">
-        <div class="section-title">Security Research &amp; Ethical Hacking</div>
-        <!-- Content remains the same as original -->
-        <div class="hack-intro">
-            <p>
-                <strong>Disclaimer:</strong> All security research, web defacements, and penetration tests listed below were conducted as part of <strong>ethical security research and bug bounty activities</strong>. Upon identifying vulnerabilities, responsible disclosure was made to affected administrators, and patching assistance was provided. This work has directly improved the security posture of multiple Sri Lankan government and private organizations.
-            </p>
-            <div class="hack-stats">
-                <div class="hack-stat">
-                    <span class="num">200+</span>
-                    <span class="lbl">Sites Researched</span>
-                </div>
-                <div class="hack-stat">
-                    <span class="num">200+</span>
-                    <span class="lbl">Mirror Records*</span>
-                </div>
-                <div class="hack-stat">
-                    <span class="num">10+</span>
-                    <span class="lbl">Yrs Experience</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hack items remain unchanged -->
-        <div class="hack-item">
-            <div class="hack-item-title">
-                Jatika Rupavahini Corporation (National TV)
-                <span class="hack-badge badge-red">Flagship Research</span>
-                <span class="hack-badge badge-orange">Sri Lanka #1</span>
-            </div>
-            <p>Identified and exploited a critical web vulnerability in Sri Lanka's national television broadcaster — Rupavahini.lk — in 2013. After demonstrating the vulnerability, coordinated with the web administrators to patch and secure the platform. Documented the full process for security awareness.</p>
-            <div class="hack-links">
-                <a class="hack-link" href="https://www.youtube.com/watch?v=C-kMnQdbu20" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
-                    YouTube: Hack Demo Video
                 </a>
-                <a class="hack-link" href="https://www.zone-h.org/archive/notifier=blackwood" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    Zone-H Mirror Archive (blackwood)
+
+                <a
+                    class="repo-card"
+                    href="https://github.com/dulankacharidu/InfoHub_Toolkit"
+                    target="_blank"
+                >
+
+                    <div>
+
+                        <div class="repo-name">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M3 3h18v18H3zM3 9h18M9 21V9"
+                                ></path>
+                            </svg>
+
+                            Ethical Hacking Info Gathering
+                            all in One Toolkit by Me 😊
+
+                        </div>
+
+                        <div class="repo-desc">
+
+                            Ethical hacking information gathering
+                            course materials. Full fill automates
+                            all other information gathering tools
+                            in one place with how to doing and
+                            description of those tools to learn
+                            ethical hacking main part of
+                            Information gathering (footprinting).
+
+                        </div>
+
+                    </div>
+
+                    <span class="repo-lang">
+                        Python ★2
+                    </span>
+
                 </a>
-            </div>
-        </div>
 
-        <div class="hack-item">
-            <div class="hack-item-title">
-                Zone-H Defacement Archive
-                <span class="hack-badge badge-orange">200+ Records</span>
-            </div>
-            <p>Over 200 documented web security research cases mirrored on Zone-H under the notifier alias <strong>"blackwood"</strong>. Each case involved identifying web application vulnerabilities (SQL injection, XSS, misconfiguration), demonstrating impact, and notifying administrators for remediation.</p>
-            <div class="hack-links">
-                <a class="hack-link" href="https://www.zone-h.org/archive/notifier=blackwood" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    View Zone-H Archive
+                <a
+                    class="repo-card"
+                    href="https://github.com/dulankacharidu/DuLu-ui"
+                    target="_blank"
+                >
+
+                    <div>
+
+                        <div class="repo-name">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <rect
+                                    x="2"
+                                    y="3"
+                                    width="20"
+                                    height="14"
+                                    rx="2"
+                                ></rect>
+
+                                <line
+                                    x1="8"
+                                    y1="21"
+                                    x2="16"
+                                    y2="21"
+                                ></line>
+
+                                <line
+                                    x1="12"
+                                    y1="17"
+                                    x2="12"
+                                    y2="21"
+                                ></line>
+                            </svg>
+
+                            DuLu-ui
+
+                        </div>
+
+                        <div class="repo-desc">
+
+                            Xray V2Ray panel supporting
+                            multi-protocol and multi-user
+                            operation on Linux — advanced
+                            proxy and tunneling management
+                            interface.
+
+                        </div>
+
+                    </div>
+
+                    <span class="repo-lang">
+                        JavaScript ★3
+                    </span>
+
                 </a>
+
+                <a
+                    class="repo-card"
+                    href="https://github.com/dulankacharidu/Ezviz_Unbind_Hack"
+                    target="_blank"
+                >
+
+                    <div>
+
+                        <div class="repo-name">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                ></circle>
+
+                                <line
+                                    x1="12"
+                                    y1="8"
+                                    x2="12"
+                                    y2="12"
+                                ></line>
+
+                                <line
+                                    x1="12"
+                                    y1="16"
+                                    x2="12.01"
+                                    y2="16"
+                                ></line>
+                            </svg>
+
+                            Ezviz_Unbind_Hack
+
+                        </div>
+
+                        <div class="repo-desc">
+
+                            Security research tool demonstrating
+                            how to view a previously bound Ezviz
+                            camera on a new device — useful for
+                            legitimate device recovery and
+                            security auditing.
+
+                        </div>
+
+                    </div>
+
+                    <span class="repo-lang">
+                        Research ★1
+                    </span>
+
+                </a>
+
+                <a
+                    class="repo-card"
+                    href="https://github.com/dulankacharidu/Whatsapp_Link_Generator"
+                    target="_blank"
+                >
+
+                    <div>
+
+                        <div class="repo-name">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2
+                                    0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                                ></path>
+                            </svg>
+
+                            Whatsapp_Link_Generator
+
+                        </div>
+
+                        <div class="repo-desc">
+
+                            Simple web tool to generate click-to-chat
+                            WhatsApp links without saving contact
+                            numbers. Eliminates manual phone number
+                            formatting for businesses and developers.
+
+                        </div>
+
+                    </div>
+
+                    <span class="repo-lang">
+                        HTML ★2
+                    </span>
+
+                </a>
+
+                <a
+                    class="repo-card"
+                    href="https://github.com/dulankacharidu/dulankacharidu"
+                    target="_blank"
+                >
+
+                    <div>
+
+                        <div class="repo-name">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+
+                                <path
+                                    d="M20 21v-2a4 4 0 0 0-4-4H8
+                                    a4 4 0 0 0-4 4v2"
+                                ></path>
+
+                                <circle
+                                    cx="12"
+                                    cy="7"
+                                    r="4"
+                                ></circle>
+
+                            </svg>
+
+                            dulankacharidu
+                            (Profile README)
+
+                        </div>
+
+                        <div class="repo-desc">
+
+                            GitHub profile repository showcasing
+                            expertise as a Cyber Security Specialist,
+                            Penetration Tester, Bug Hunter, and
+                            Software Developer for government and
+                            private projects.
+
+                        </div>
+
+                    </div>
+
+                    <span class="repo-lang">
+                        Markdown
+                    </span>
+
+                </a>
+
             </div>
+
+        </section>
+
+        <!-- =====================================================
+             SECURITY RESEARCH
+        ===================================================== -->
+
+        <section
+            class="section"
+            id="security"
+        >
+
+            <div class="section-title">
+                Security Research &amp; Ethical Hacking
+            </div>
+
+            <div class="hack-intro">
+
+                <p>
+
+                    <strong>
+                        Disclaimer:
+                    </strong>
+
+                    All security research, web defacements, and
+                    penetration tests listed below were conducted
+                    as part of
+                    <strong>
+                        ethical security research and bug bounty activities
+                    </strong>.
+
+                    Upon identifying vulnerabilities, responsible
+                    disclosure was made to affected administrators,
+                    and patching assistance was provided.
+
+                    This work has directly improved the security
+                    posture of multiple Sri Lankan government and
+                    private organizations.
+
+                </p>
+
+                <div class="hack-stats">
+
+                    <div class="hack-stat">
+
+                        <span class="num">
+                            200+
+                        </span>
+
+                        <span class="lbl">
+                            Sites Researched
+                        </span>
+
+                    </div>
+
+                    <div class="hack-stat">
+
+                        <span class="num">
+                            200+
+                        </span>
+
+                        <span class="lbl">
+                            Mirror Records*
+                        </span>
+
+                    </div>
+
+                    <div class="hack-stat">
+
+                        <span class="num">
+                            10+
+                        </span>
+
+                        <span class="lbl">
+                            Yrs Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Security research item -->
+
+            <div class="hack-item">
+
+                <div class="hack-item-title">
+
+                    Jatika Rupavahini Corporation
+                    (National TV)
+
+                    <span class="hack-badge badge-red">
+                        Flagship Research
+                    </span>
+
+                    <span class="hack-badge badge-orange">
+                        Sri Lanka #1
+                    </span>
+
+                </div>
+
+                <p>
+
+                    Identified and exploited a critical web
+                    vulnerability in Sri Lanka's national television
+                    broadcaster — Rupavahini.lk — in 2013.
+
+                    After demonstrating the vulnerability,
+                    coordinated with the web administrators
+                    to patch and secure the platform.
+
+                    Documented the full process for security awareness.
+
+                </p>
+
+                <div class="hack-links">
+
+                    <a
+                        class="hack-link"
+                        href="https://www.youtube.com/watch?v=C-kMnQdbu20"
+                        target="_blank"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+
+                            <path
+                                d="M19.615 3.184c-3.604-.246
+                                -11.631-.245-15.23 0-3.897
+                                .266-4.356 2.62-4.385 8.816
+                                .029 6.185.484 8.549 4.385
+                                8.816 3.6.245 11.626.246
+                                15.23 0 3.897-.266 4.356
+                                -2.62 4.385-8.816-.029
+                                -6.196-.488-8.55-4.385-8.816
+                                zm-10.615 12.816v-8l8 3.993
+                                -8 4.007z"
+                            ></path>
+
+                        </svg>
+
+                        YouTube: Hack Demo Video
+
+                    </a>
+
+                    <a
+                        class="hack-link"
+                        href="https://www.zone-h.org/archive/notifier=blackwood"
+                        target="_blank"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <circle
+                                cx="11"
+                                cy="11"
+                                r="8"
+                            ></circle>
+
+                            <line
+                                x1="21"
+                                y1="21"
+                                x2="16.65"
+                                y2="16.65"
+                            ></line>
+
+                        </svg>
+
+                        Zone-H Mirror Archive (blackwood)
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hack-item">
+
+                <div class="hack-item-title">
+
+                    Zone-H Defacement Archive
+
+                    <span class="hack-badge badge-orange">
+                        200+ Records
+                    </span>
+
+                </div>
+
+                <p>
+
+                    Over 200 documented web security research
+                    cases mirrored on Zone-H under the notifier
+                    alias <strong>"blackwood"</strong>.
+
+                    Each case involved identifying web application
+                    vulnerabilities (SQL injection, XSS,
+                    misconfiguration), demonstrating impact,
+                    and notifying administrators for remediation.
+
+                </p>
+
+                <div class="hack-links">
+
+                    <a
+                        class="hack-link"
+                        href="https://www.zone-h.org/archive/notifier=blackwood"
+                        target="_blank"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5
+                                a2 2 0 0 1-2-2V8a2 2
+                                0 0 1 2-2h6"
+                            ></path>
+
+                            <polyline
+                                points="15 3 21 3 21 9"
+                            ></polyline>
+
+                            <line
+                                x1="10"
+                                y1="14"
+                                x2="21"
+                                y2="3"
+                            ></line>
+
+                        </svg>
+
+                        View Zone-H Archive
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             SKILLS
+        ===================================================== -->
+
+        <section
+            class="section"
+            id="skills"
+        >
+
+            <div class="section-title">
+                Skills &amp; Expertise
+            </div>
+
+            <!-- Cybersecurity -->
+
+            <div class="skill-cat">
+                Cybersecurity &amp; Networking
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-chip">
+                    <span class="icon">🔐</span>
+                    Ethical Hacking &amp; Pen Testing
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🛡️</span>
+                    SOC Analyst Operations
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🌐</span>
+                    Network Security &amp; Design
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🕵️</span>
+                    Bug Bounty Hunting
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🔎</span>
+                    Vulnerability Research
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🌑</span>
+                    Dark Web &amp; OSINT
+                </div>
+
+            </div>
+
+            <!-- Infrastructure -->
+
+            <div class="skill-cat">
+                Infrastructure &amp; Hardware
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-chip">
+                    <span class="icon">📷</span>
+                    CCTV Installation &amp; Maintenance
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🔌</span>
+                    Network Cabling: Coax, Cat5e, Cat6e, Fiber
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">💡</span>
+                    House Wiring &amp; Construction
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🚗</span>
+                    Vehicle GPS Systems
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🔒</span>
+                    Access Control Systems
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🖥️</span>
+                    Computer &amp; Laptop Repair
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">📡</span>
+                    Hik-Vision Registered Dealer
+                </div>
+
+            </div>
+
+            <!-- Software -->
+
+            <div class="skill-cat">
+                Software &amp; AI Technology
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-chip">
+                    <span class="icon">🤖</span>
+                    AI MCP Agent Building
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">☁️</span>
+                    MCP Minimal Server Deployment
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🏠</span>
+                    IoT &amp; Smart Home Integration
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">⚙️</span>
+                    ESP32 Microcontroller Dev
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">🌍</span>
+                    Web &amp; Software Solutions
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">☕</span>
+                    Java Application Development
+                </div>
+
+            </div>
+
+            <!-- Digital Marketing -->
+
+            <div class="skill-cat">
+                Digital Marketing
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-chip">
+                    <span class="icon">📈</span>
+                    SEO &amp; SEM / PPC
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">📱</span>
+                    Social Media Marketing
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">✉️</span>
+                    Email &amp; Mobile Marketing
+                </div>
+
+                <div class="skill-chip">
+                    <span class="icon">📊</span>
+                    Analytics &amp; Affiliate Marketing
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer class="footer">
+
+        <p>
+
+            <a
+                href="https://github.com/dulankacharidu"
+                target="_blank"
+            >
+                github.com/dulankacharidu
+            </a>
+
+            &nbsp;·&nbsp;
+
+            <a href="mailto:dulankacharidu@gmail.com">
+                dulankacharidu@gmail.com
+            </a>
+
+            &nbsp;·&nbsp;
+
+            <a
+                href="https://fb.com/vcreation.lk"
+                target="_blank"
+            >
+                Virtual Creation
+            </a>
+
+            &nbsp;·&nbsp;
+
+            <a
+                href="https://dulanka.is-a.dev"
+                target="_blank"
+            >
+                dulanka.is-a.dev
+            </a>
+
+        </p>
+
+        <p
+            style="
+                margin-top:8px;
+                opacity:0.5;
+            "
+        >
+            © 2026 Dulanka Charidu Karandeniya —
+            Digital CV v2.0
+        </p>
+
+    </footer>
+
+    <!-- =========================================================
+         CERTIFICATE MODALS
+    ========================================================= -->
+
+    <div
+        id="cert-cise"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('cert-cise')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/YtvQjwD/Certified-Information-Security-Expert-Certificate-Innobuzz-CISE.jpg"
+                alt="CISE Certificate"
+            >
+
         </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-        <div class="section-title">Skills &amp; Expertise</div>
-        <!-- Skills remain the same -->
-        <div class="skill-cat">Cybersecurity &amp; Networking</div>
-        <div class="skills-grid">
-            <div class="skill-chip"><span class="icon">🔐</span> Ethical Hacking &amp; Pen Testing</div>
-            <div class="skill-chip"><span class="icon">🛡️</span> SOC Analyst Operations</div>
-            <div class="skill-chip"><span class="icon">🌐</span> Network Security &amp; Design</div>
-            <div class="skill-chip"><span class="icon">🕵️</span> Bug Bounty Hunting</div>
-            <div class="skill-chip"><span class="icon">🔎</span> Vulnerability Research</div>
-            <div class="skill-chip"><span class="icon">🌑</span> Dark Web &amp; OSINT</div>
+    </div>
+
+    <div
+        id="cert-reveng"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('cert-reveng')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/67Dn06tZ/Certificate.png"
+                alt="Reverse Engineering Certificate"
+            >
+
         </div>
 
-        <div class="skill-cat">Infrastructure &amp; Hardware</div>
-        <div class="skills-grid">
-            <div class="skill-chip"><span class="icon">📷</span> CCTV Installation &amp; Maintenance</div>
-            <div class="skill-chip"><span class="icon">🔌</span> Network Cabling: Coax, Cat5e, Cat6e, Fiber</div>
-            <div class="skill-chip"><span class="icon">💡</span> House Wiring &amp; Construction</div>
-            <div class="skill-chip"><span class="icon">🚗</span> Vehicle GPS Systems</div>
-            <div class="skill-chip"><span class="icon">🔒</span> Access Control Systems</div>
-            <div class="skill-chip"><span class="icon">🖥️</span> Computer &amp; Laptop Repair</div>
-            <div class="skill-chip"><span class="icon">📡</span> Hik-Vision Registered Dealer</div>
+    </div>
+
+    <div
+        id="cert-android"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('cert-android')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/1fwdbQvd/Android-bug-bountry-certificate.png"
+                alt="Android Bug Bounty Certificate"
+            >
+
         </div>
 
-        <div class="skill-cat">Software &amp; AI Technology</div>
-        <div class="skills-grid">
-            <div class="skill-chip"><span class="icon">🤖</span> AI MCP Agent Building</div>
-            <div class="skill-chip"><span class="icon">☁️</span> MCP Minimal Server Deployment</div>
-            <div class="skill-chip"><span class="icon">🏠</span> IoT &amp; Smart Home Integration</div>
-            <div class="skill-chip"><span class="icon">⚙️</span> ESP32 Microcontroller Dev</div>
-            <div class="skill-chip"><span class="icon">🌍</span> Web &amp; Software Solutions</div>
-            <div class="skill-chip"><span class="icon">☕</span> Java Application Development</div>
+    </div>
+
+    <div
+        id="cert-darkweb"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('cert-darkweb')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/V0NWZNyb/47aa565f-fe3e-4945-819d-a039c0ba5890.png"
+                alt="Dark Web Certificate"
+            >
+
         </div>
 
-        <div class="skill-cat">Digital Marketing</div>
-        <div class="skills-grid">
-            <div class="skill-chip"><span class="icon">📈</span> SEO &amp; SEM / PPC</div>
-            <div class="skill-chip"><span class="icon">📱</span> Social Media Marketing</div>
-            <div class="skill-chip"><span class="icon">✉️</span> Email &amp; Mobile Marketing</div>
-            <div class="skill-chip"><span class="icon">📊</span> Analytics &amp; Affiliate Marketing</div>
+    </div>
+
+    <div
+        id="phone"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('phone')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/0yWRVvTn/IMG-3642.png"
+                alt="Mobile Repairing Certificate"
+            >
+
         </div>
-    </section>
 
-</main>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <p>
-        <a href="https://github.com/dulankacharidu" target="_blank">github.com/dulankacharidu</a>
-        &nbsp;·&nbsp;
-        <a href="mailto:dulankacharidu@gmail.com">dulankacharidu@gmail.com</a>
-        &nbsp;·&nbsp;
-        <a href="https://fb.com/vcreation.lk" target="_blank">Virtual Creation</a>
-        &nbsp;·&nbsp;
-        <a href="https://dulanka.is-a.dev" target="_blank">dulanka.is-a.dev</a>
-    
-     </p>
-    <p style="margin-top:8px;opacity:0.5;">© 2026 Dulanka Charidu Karandeniya — Digital CV v2.0</p>
-</footer>
-
-<!-- CERTIFICATE MODALS -->
-<div id="cert-cise" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('cert-cise')">×</button>
-        <img src="https://i.ibb.co/YtvQjwD/Certified-Information-Security-Expert-Certificate-Innobuzz-CISE.jpg" alt="CISE Certificate">
     </div>
-</div>
 
-<div id="cert-reveng" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('cert-reveng')">×</button>
-        <img src="https://i.ibb.co/67Dn06tZ/Certificate.png" alt="Reverse Engineering Certificate">
+    <div
+        id="cert-company1"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('cert-company1')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/bSyBhJs/career141.png"
+                alt="Career141 Certificate"
+            >
+
+        </div>
+
     </div>
-</div>
 
-<div id="cert-android" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('cert-android')">×</button>
-        <img src="https://i.ibb.co/1fwdbQvd/Android-bug-bountry-certificate.png" alt="Android Bug Bounty Certificate">
+    <div
+        id="cert-company2"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('cert-company2')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/fdBXwYVS/Asoka-school.png"
+                alt="Asoka School Certificate"
+            >
+
+        </div>
+
     </div>
-</div>
 
-<div id="cert-darkweb" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('cert-darkweb')">×</button>
-        <img src="https://i.ibb.co/V0NWZNyb/47aa565f-fe3e-4945-819d-a039c0ba5890.png" alt="Dark Web Certificate">
+    <div
+        id="ham-radio"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeCertificate('ham-radio')"
+            >
+                ×
+            </button>
+
+            <img
+                src="https://i.ibb.co/YF46nbcn/IMG-4663.jpg"
+                alt="Ham Radio Certification"
+            >
+
+        </div>
+
     </div>
-</div>
 
-<div id="phone" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('phone')">×</button>
-        <img src="https://i.ibb.co/0yWRVvTn/IMG-3642.png" alt="Mobile Repairing Certificate">
-    </div>
-</div>
+    <!-- =========================================================
+         CERTIFICATE JAVASCRIPT
+    ========================================================= -->
 
-<div id="cert-company1" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('cert-company1')">×</button>
-        <img src="https://i.ibb.co/bSyBhJs/career141.png" alt="Career141 Certificate">
-    </div>
-</div>
+    <script>
+        function openCertificate(certId) {
 
-<div id="cert-company2" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('cert-company2')">×</button>
-        <img src="https://i.ibb.co/fdBXwYVS/Asoka-school.png" alt="Asoka School Certificate">
-    </div>
-</div>
+            const certificate =
+                document.getElementById(certId);
 
-<div id="ham-radio" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeCertificate('ham-radio')">×</button>
-        <img src="https://i.ibb.co/YF46nbcn/IMG-4663.jpg" alt="Ham Radio Certification ">
-    </div>
-</div>
+            if (certificate) {
+                certificate.classList.add('show');
+            }
 
-<script>
-function openCertificate(certId) {
-    document.getElementById(certId).classList.add('show');
-}
+        }
 
-function closeCertificate(certId) {
-    document.getElementById(certId).classList.remove('show');
-}
+        function closeCertificate(certId) {
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.classList.remove('show');
-    }
-}
-</script>
-<script>
-    const protectedButton = document.getElementById("secureBtn");
+            const certificate =
+                document.getElementById(certId);
 
-protectedButton.addEventListener("click", function() {
-  // Trigger a browser pop-up text entry box
-  const userInput = prompt("Please enter the password to proceed:");
+            if (certificate) {
+                certificate.classList.remove('show');
+            }
 
-  if (userInput === "2026") {
-    alert("Correct! Opening your file.");
-    // Action to take: e.g., Redirect to a secret page
-    window.location.href = "/Dulanka_CV.pdf";
-  } else if (userInput !== null) {
-    // If the user didn't hit 'Cancel' but entered the wrong text
-    alert("Access Denied: Incorrect password.");
-  }
-});
-</script>
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+
+            if (
+                event.target &&
+                event.target.classList &&
+                event.target.classList.contains('modal')
+            ) {
+
+                event.target.classList.remove('show');
+
+            }
+
+        };
+    </script>
+
+    <!-- =========================================================
+         SECURE PDF DOWNLOAD
+    ========================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const protectedButton =
+                    document.getElementById("secureBtn");
+
+                if (!protectedButton) {
+
+                    console.error(
+                        "Download button #secureBtn was not found."
+                    );
+
+                    return;
+                }
+
+                protectedButton.addEventListener(
+                    "click",
+                    async function () {
+
+                        /*
+                         * PASSWORD
+                         *
+                         * IMPORTANT:
+                         * This is only client-side protection.
+                         * Anyone who can inspect the source can see
+                         * this password.
+                         */
+
+                        const userInput =
+                            prompt(
+                                "Please enter the password to download the CV:"
+                            );
+
+                        /*
+                         * User pressed Cancel.
+                         */
+
+                        if (userInput === null) {
+                            return;
+                        }
+
+                        /*
+                         * Check password.
+                         */
+
+                        if (userInput !== "2026") {
+
+                            alert(
+                                "Access Denied: Incorrect password."
+                            );
+
+                            return;
+                        }
+
+                        /*
+                         * Password is correct.
+                         */
+
+                        protectedButton.disabled = true;
+
+                        protectedButton.style.opacity = "0.6";
+
+                        protectedButton.style.cursor = "wait";
+
+                        /*
+                         * IMPORTANT:
+                         *
+                         * This path must point to the REAL PDF.
+                         */
+
+                        const pdfUrl =
+                            "/Dulanka_CV.pdf";
+
+                        try {
+
+                            /*
+                             * Fetch the actual PDF.
+                             *
+                             * cache: no-store prevents the browser
+                             * from using an old cached response.
+                             */
+
+                            const response =
+                                await fetch(
+                                    pdfUrl,
+                                    {
+                                        method: "GET",
+                                        cache: "no-store"
+                                    }
+                                );
+
+                            /*
+                             * Check HTTP status.
+                             */
+
+                            if (!response.ok) {
+
+                                throw new Error(
+                                    "Server returned HTTP " +
+                                    response.status
+                                );
+
+                            }
+
+                            /*
+                             * Check Content-Type.
+                             *
+                             * A genuine PDF should normally be:
+                             *
+                             * application/pdf
+                             */
+
+                            const contentType =
+                                response.headers.get(
+                                    "content-type"
+                                ) || "";
+
+                            console.log(
+                                "PDF Content-Type:",
+                                contentType
+                            );
+
+                            if (
+                                !contentType
+                                    .toLowerCase()
+                                    .includes("application/pdf")
+                            ) {
+
+                                console.error(
+                                    "The server response is not a PDF.",
+                                    {
+                                        contentType:
+                                            contentType
+                                    }
+                                );
+
+                                throw new Error(
+                                    "The server did not return application/pdf."
+                                );
+
+                            }
+
+                            /*
+                             * Convert response into a Blob.
+                             *
+                             * This preserves the PDF binary data.
+                             */
+
+                            const pdfBlob =
+                                await response.blob();
+
+                            /*
+                             * Basic size validation.
+                             *
+                             * This catches things such as an empty
+                             * response or a very small error file.
+                             */
+
+                            if (
+                                !pdfBlob ||
+                                pdfBlob.size < 1000
+                            ) {
+
+                                throw new Error(
+                                    "The downloaded PDF is unexpectedly small."
+                                );
+
+                            }
+
+                            /*
+                             * Create a temporary object URL.
+                             */
+
+                            const downloadUrl =
+                                URL.createObjectURL(
+                                    pdfBlob
+                                );
+
+                            /*
+                             * Create temporary download link.
+                             */
+
+                            const downloadLink =
+                                document.createElement("a");
+
+                            downloadLink.href =
+                                downloadUrl;
+
+                            downloadLink.download =
+                                "Dulanka_Charidu_Karandeniya_CV_2026.pdf";
+
+                            /*
+                             * Add to DOM.
+                             */
+
+                            document.body.appendChild(
+                                downloadLink
+                            );
+
+                            /*
+                             * Start download.
+                             */
+
+                            downloadLink.click();
+
+                            /*
+                             * Remove temporary element.
+                             */
+
+                            downloadLink.remove();
+
+                            /*
+                             * Release browser memory.
+                             */
+
+                            setTimeout(
+                                function () {
+
+                                    URL.revokeObjectURL(
+                                        downloadUrl
+                                    );
+
+                                },
+                                2000
+                            );
+
+                            /*
+                             * Tell user that download started.
+                             */
+
+                            alert(
+                                "Password correct. CV PDF download started."
+                            );
+
+                        }
+
+                        catch (error) {
+
+                            /*
+                             * Log complete error for debugging.
+                             */
+
+                            console.error(
+                                "PDF download error:",
+                                error
+                            );
+
+                            /*
+                             * Show useful message to user.
+                             */
+
+                            alert(
+                                "The password is correct, but the PDF could not be downloaded correctly.\n\n" +
+                                "Please check that /Dulanka_CV.pdf exists on the server and that the server returns it as application/pdf."
+                            );
+
+                        }
+
+                        finally {
+
+                            /*
+                             * Restore button.
+                             */
+
+                            protectedButton.disabled =
+                                false;
+
+                            protectedButton.style.opacity =
+                                "1";
+
+                            protectedButton.style.cursor =
+                                "pointer";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
 </body>
+
 </html>
