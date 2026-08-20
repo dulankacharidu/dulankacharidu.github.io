@@ -3390,295 +3390,96 @@
         };
     </script>
 
-    <!-- =========================================================
-         SECURE PDF DOWNLOAD
-    ========================================================= -->
-
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-                const protectedButton =
-                    document.getElementById("secureBtn");
-
-                if (!protectedButton) {
-
-                    console.error(
-                        "Download button #secureBtn was not found."
-                    );
-
-                    return;
-                }
-
-                protectedButton.addEventListener(
-                    "click",
-                    async function () {
-
-                        /*
-                         * PASSWORD
-                         *
-                         * IMPORTANT:
-                         * This is only client-side protection.
-                         * Anyone who can inspect the source can see
-                         * this password.
-                         */
-
-                        const userInput =
-                            prompt(
-                                "Please enter the password to download the CV:"
-                            );
-
-                        /*
-                         * User pressed Cancel.
-                         */
-
-                        if (userInput === null) {
-                            return;
-                        }
-
-                        /*
-                         * Check password.
-                         */
-
-                        if (userInput !== "2026") {
-
-                            alert(
-                                "Access Denied: Incorrect password."
-                            );
-
-                            return;
-                        }
-
-                        /*
-                         * Password is correct.
-                         */
-
-                        protectedButton.disabled = true;
-
-                        protectedButton.style.opacity = "0.6";
-
-                        protectedButton.style.cursor = "wait";
-
-                        /*
-                         * IMPORTANT:
-                         *
-                         * This path must point to the REAL PDF.
-                         */
-
-                        const pdfUrl =
-                            "/Dulanka_CV.pdf";
-
-                        try {
-
-                            /*
-                             * Fetch the actual PDF.
-                             *
-                             * cache: no-store prevents the browser
-                             * from using an old cached response.
-                             */
-
-                            const response =
-                                await fetch(
-                                    pdfUrl,
-                                    {
-                                        method: "GET",
-                                        cache: "no-store"
-                                    }
-                                );
-
-                            /*
-                             * Check HTTP status.
-                             */
-
-                            if (!response.ok) {
-
-                                throw new Error(
-                                    "Server returned HTTP " +
-                                    response.status
-                                );
-
-                            }
-
-                            /*
-                             * Check Content-Type.
-                             *
-                             * A genuine PDF should normally be:
-                             *
-                             * application/pdf
-                             */
-
-                            const contentType =
-                                response.headers.get(
-                                    "content-type"
-                                ) || "";
-
-                            console.log(
-                                "PDF Content-Type:",
-                                contentType
-                            );
-
-                            if (
-                                !contentType
-                                    .toLowerCase()
-                                    .includes("application/pdf")
-                            ) {
-
-                                console.error(
-                                    "The server response is not a PDF.",
-                                    {
-                                        contentType:
-                                            contentType
-                                    }
-                                );
-
-                                throw new Error(
-                                    "The server did not return application/pdf."
-                                );
-
-                            }
-
-                            /*
-                             * Convert response into a Blob.
-                             *
-                             * This preserves the PDF binary data.
-                             */
-
-                            const pdfBlob =
-                                await response.blob();
-
-                            /*
-                             * Basic size validation.
-                             *
-                             * This catches things such as an empty
-                             * response or a very small error file.
-                             */
-
-                            if (
-                                !pdfBlob ||
-                                pdfBlob.size < 1000
-                            ) {
-
-                                throw new Error(
-                                    "The downloaded PDF is unexpectedly small."
-                                );
-
-                            }
-
-                            /*
-                             * Create a temporary object URL.
-                             */
-
-                            const downloadUrl =
-                                URL.createObjectURL(
-                                    pdfBlob
-                                );
-
-                            /*
-                             * Create temporary download link.
-                             */
-
-                            const downloadLink =
-                                document.createElement("a");
-
-                            downloadLink.href =
-                                downloadUrl;
-
-                            downloadLink.download =
-                                "Dulanka_Charidu_Karandeniya_CV_2026.pdf";
-
-                            /*
-                             * Add to DOM.
-                             */
-
-                            document.body.appendChild(
-                                downloadLink
-                            );
-
-                            /*
-                             * Start download.
-                             */
-
-                            downloadLink.click();
-
-                            /*
-                             * Remove temporary element.
-                             */
-
-                            downloadLink.remove();
-
-                            /*
-                             * Release browser memory.
-                             */
-
-                            setTimeout(
-                                function () {
-
-                                    URL.revokeObjectURL(
-                                        downloadUrl
-                                    );
-
-                                },
-                                2000
-                            );
-
-                            /*
-                             * Tell user that download started.
-                             */
-
-                            alert(
-                                "Password correct. CV PDF download started."
-                            );
-
-                        }
-
-                        catch (error) {
-
-                            /*
-                             * Log complete error for debugging.
-                             */
-
-                            console.error(
-                                "PDF download error:",
-                                error
-                            );
-
-                            /*
-                             * Show useful message to user.
-                             */
-
-                            alert(
-                                "The password is correct, but the PDF could not be downloaded correctly.\n\n" +
-                                "Please check that /Dulanka_CV.pdf exists on the server and that the server returns it as application/pdf."
-                            );
-
-                        }
-
-                        finally {
-
-                            /*
-                             * Restore button.
-                             */
-
-                            protectedButton.disabled =
-                                false;
-
-                            protectedButton.style.opacity =
-                                "1";
-
-                            protectedButton.style.cursor =
-                                "pointer";
-
-                        }
-
-                    }
-                );
-
+  <!-- =========================================================
+     SECURE PDF DOWNLOAD (fixed)
+========================================================= -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const protectedButton = document.getElementById("secureBtn");
+    if (!protectedButton) {
+        console.error("Download button #secureBtn was not found.");
+        return;
+    }
+
+    protectedButton.addEventListener("click", async function () {
+        const userInput = prompt("Please enter the password to download the CV:");
+        if (userInput === null) return;               // Cancel
+
+        if (userInput !== "2026") {
+            alert("Access Denied: Incorrect password.");
+            return;
+        }
+
+        protectedButton.disabled = true;
+        protectedButton.style.opacity = "0.6";
+        protectedButton.style.cursor = "wait";
+
+        // Prefer the absolute URL so it always works
+        // (even if the page is opened from file:// or another domain)
+        const pdfUrl = "https://dulanka.is-a.dev/Dulanka_CV.pdf";
+        // fallback relative path if you prefer:
+        // const pdfUrl = "/Dulanka_CV.pdf";
+
+        try {
+            const response = await fetch(pdfUrl, {
+                method: "GET",
+                cache: "no-store",
+                mode: "cors"          // important for cross-origin
+            });
+
+            if (!response.ok) {
+                throw new Error("Server returned HTTP " + response.status);
             }
-        );
 
-    </script>
+            const contentType = (response.headers.get("content-type") || "").toLowerCase();
+            console.log("PDF Content-Type:", contentType);
+
+            // Accept both proper PDF and the common octet-stream that GitHub sometimes returns
+            if (
+                !contentType.includes("application/pdf") &&
+                !contentType.includes("application/octet-stream")
+            ) {
+                throw new Error("The server did not return a PDF (got: " + contentType + ")");
+            }
+
+            const pdfBlob = await response.blob();
+
+            if (!pdfBlob || pdfBlob.size < 10000) {   // real CV is ~1.1 MB
+                throw new Error("The downloaded file is too small to be a valid PDF.");
+            }
+
+            // Extra safety: check magic bytes
+            const firstBytes = await pdfBlob.slice(0, 5).text();
+            if (!firstBytes.startsWith("%PDF-")) {
+                throw new Error("File does not start with %PDF- (got: " + firstBytes + ")");
+            }
+
+            const downloadUrl = URL.createObjectURL(pdfBlob);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = downloadUrl;
+            downloadLink.download = "Dulanka_Charidu_Karandeniya_CV_2026.pdf";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+
+            setTimeout(() => URL.revokeObjectURL(downloadUrl), 3000);
+
+            alert("Password correct. CV PDF download started.");
+        } catch (error) {
+            console.error("PDF download error:", error);
+            alert(
+                "Password is correct, but the PDF could not be downloaded.\n\n" +
+                "Error: " + error.message + "\n\n" +
+                "Please try again or contact the site owner."
+            );
+        } finally {
+            protectedButton.disabled = false;
+            protectedButton.style.opacity = "1";
+            protectedButton.style.cursor = "pointer";
+        }
+    });
+});
+</script>
 
 </body>
 
